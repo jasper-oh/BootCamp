@@ -5,9 +5,9 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 //		화면에 문자열 상수 출력
-		System.out.println("------------");
-		System.out.println("Hello, World");
-		System.out.println("------------");
+		System.out.println("---------------");
+		System.out.println("| Hello, World |");
+		System.out.println("---------------");
 		
 //		화면에 정수(숫자) 상수 출력
 		System.out.println(10);

@@ -47,13 +47,14 @@ public class Variable_01 {
 //		30과 40의 곱셈의 결과는 1200 입니다.
 //		30과 40의 나눗셈의 결과는  0 입니다.
 		
-		System.out.println(startNum+"과"+endNum+""+"덧셈 결과는"+(startNum + endNum)+"입니다");
-		System.out.println(startNum+"과"+endNum+""+"뻴셈 결과는"+(startNum - endNum)+"입니다");
-		System.out.println(startNum+"과"+endNum+""+"곱셈 결과는"+(startNum * endNum)+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"덧셈 결과는"+(startNum + endNum)+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"뻴셈 결과는"+(startNum - endNum)+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"곱셈 결과는"+(startNum * endNum)+"입니다");
 		float dividResult = startNum / endNum;
-		System.out.println(startNum+"과"+endNum+""+"나눗셈 중 몫는"+(int)dividResult+"입니다");
-		System.out.println(startNum+"과"+endNum+""+"나눗셈 결과는"+startNum/(double)endNum+"입니다");
-		System.out.println(startNum+"과"+endNum+""+"덧셈 결과와 뺄셈결과의 곱은"+(startNum + endNum)*(startNum - endNum)+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"나눗셈 중 몫는"+(int)dividResult+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"나눗셈 결과는"+startNum/(double)endNum+"입니다");
+		System.out.println(startNum+"과"+endNum+"의"+"덧셈 결과와 뺄셈결과의 곱은"+(startNum + endNum)*(startNum - endNum)+"입니다");
+		
 		
 		
 		
