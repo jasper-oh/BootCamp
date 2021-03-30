@@ -37,6 +37,10 @@ public class MainClass {
 		System.out.println(k == 5 ? "k==5" : "k!=5");
 		System.out.println(k == 3 ? "k==5" : null );
 		
+		//Exercise : i가 홀수 인지 짝수 인지 출력 하시오
+		
+		System.out.println(i % 2 == 0 ? "짝수" : "홀수");
+		
 		
 	}
 	// public 해도 private 해도 됨 cause in the same main method
@@ -52,7 +56,5 @@ public class MainClass {
 		}else if ( b == "%") {
 			System.out.println(a+":"+ d + b +e + "=" + (d%e));
 		}
-		
-		
 	}
 }

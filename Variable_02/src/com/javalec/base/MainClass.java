@@ -4,8 +4,12 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
-//		변수와 상수
-		String str = "James";
+//	 	변수와 상수
+//		1) 문자열과 문자의 생성 차이
+		
+		String str = "James";	
+		char chr = 'a';
+//		char chr1  = 'abc'; 에러 발생
 		
 		int num = 10;
 		
@@ -20,11 +24,12 @@ public class MainClass {
 		
 		System.out.println(num + numDouble); // output : double type
 		System.out.println(num +  (int)numFloat);// output : integer type
+		System.out.println(chr);
 		
 		
 		
-		
-		
+//		 Boolean Type
+		boolean bool = true; 
 		
 
 	}
