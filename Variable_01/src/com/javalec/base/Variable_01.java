@@ -55,9 +55,6 @@ public class Variable_01 {
 		System.out.println(startNum+"과"+endNum+"의"+"나눗셈 결과는"+startNum/(double)endNum+"입니다");
 		System.out.println(startNum+"과"+endNum+"의"+"덧셈 결과와 뺄셈결과의 곱은"+(startNum + endNum)*(startNum - endNum)+"입니다");
 		
-		
-		
-		
 	}
 
 }

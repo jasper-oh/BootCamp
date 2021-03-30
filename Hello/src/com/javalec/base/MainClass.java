@@ -33,15 +33,11 @@ public class MainClass {
 		double afloat = (double)a;
 		double bfloat = (double)b;
 				
-		
 		System.out.println(a+"+"+b+"="+a+b);
 		System.out.println(a+"-"+b+"="+(a-b));
 		System.out.println(a+"*"+b+"="+(a*b));
 		System.out.println(a+"/"+b+"="+(a/b));
 		System.out.println(afloat+"/"+bfloat+"="+(afloat/bfloat));
-		
-		
-		
 		
 	}
 
