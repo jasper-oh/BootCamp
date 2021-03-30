@@ -18,16 +18,28 @@ public class MainClass {
 		
 		i = i + 1 ;
 		i ++;
-		
 		j--;
+		
+		
 		System.out.println(i);
 		
 		System.out.println("<--동등 비교 관계 연산자-->");
+		System.out.println("i == j" + (i == j)); // false 반환
+		System.out.println("i != j" + (i != j)); //true 반환
+		System.out.println("i >= j" + (i >= j));
+		System.out.println("i <= j" + (i <= j));
 		
+		System.out.println("<--논리 연산자-->");
+		System.out.println((i > j) && (j >k));
+		System.out.println((i > j) || (j >k));
+		
+		System.out.println("<--삼항 연산자-->");
+		System.out.println(k == 5 ? "k==5" : "k!=5");
+		System.out.println(k == 3 ? "k==5" : null );
 		
 		
 	}
-	
+	// public 해도 private 해도 됨 cause in the same main method
 	public static void Print(String a,String b,int d, int e) {
 		if (b == "+") {
 			System.out.println(a+":"+ d + b +e + "=" + (d+e));
@@ -37,15 +49,10 @@ public class MainClass {
 			System.out.println(a+":"+ d + b +e + "=" + (d*e));
 		}else if (b == "/") {
 			System.out.println(a+":"+ d + b +e + "=" + (d/e));
-		}else if ( b== "%") {
+		}else if ( b == "%") {
 			System.out.println(a+":"+ d + b +e + "=" + (d%e));
 		}
 		
-				
-			
-		
-			
-			
 		
 	}
 }
