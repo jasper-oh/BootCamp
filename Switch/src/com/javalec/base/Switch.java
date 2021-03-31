@@ -73,13 +73,17 @@ class MorningClass{
 		System.out.println("점수를 입력하세요 : ");
 		grade = sc.nextInt();
 		
+		double dCheckGrade = grade/10;
 		int checkGrade = (int)(grade/10);
+		
 		
 		switch(checkGrade) {
 		case 10:
-			result = "Grade A";
-			System.out.println(result);
-			break;
+			if(dCheckGrade > 10) {
+				System.out.println("Invalid Score");
+				break;
+			}
+			
 		case 9:
 			result = "Grade A";
 			System.out.println(result);
