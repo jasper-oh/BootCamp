@@ -4,6 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
+		
 //		화면에 문자열 상수 출력
 		System.out.println("---------------");
 		System.out.println("| Hello, World |");

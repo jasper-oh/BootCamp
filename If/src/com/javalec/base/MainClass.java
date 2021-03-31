@@ -1,8 +1,5 @@
 package com.javalec.base;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Hashtable;
 import java.util.Scanner;
 
 public class MainClass {
@@ -25,8 +22,6 @@ public class MainClass {
 //		getScoreAverage();
 		getBmiAverage();
 		
-		
-
 		
 		//반복문으로 묶기
 //		String ans;
@@ -80,8 +75,6 @@ public class MainClass {
             }else if(bmi < 18.5) {
             	System.out.println("당신은 저체중입니다.");
             }
-            
-		
 		
 	}
 
