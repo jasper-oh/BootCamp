@@ -83,7 +83,7 @@ class MorningClass{
 				System.out.println("Invalid Score");
 				break;
 			}
-			
+		
 		case 9:
 			result = "Grade A";
 			System.out.println(result);

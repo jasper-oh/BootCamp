@@ -21,7 +21,7 @@ public class MainClass {
 //		ifPractice2();
 //		getScoreAverage();
 		getBmiAverage();
-		
+	
 		
 		//반복문으로 묶기
 //		String ans;
