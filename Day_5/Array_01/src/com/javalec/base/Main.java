@@ -12,8 +12,8 @@ public class Main {
 		
 		MorningClass mc = new MorningClass();
 		
-//		mc.stringArray();
-		mc.exercise11();
+		mc.basicConceptArray_2();
+//		mc.exercise11();
 		
 	}
 
@@ -46,6 +46,19 @@ class MorningClass {
 		String[] str = {"Sun","Mon","Tues","Wed","Thur","Fri","Sat"};
 		
 	}
+	void basicConceptArray_2() {
+		
+//		when initialized Array with syntax, On default, every value's are setting in 0 
+		
+		int[] array = new int[4];
+		String[] strArray = new String[4];
+		
+//		Output : 0
+		
+		System.out.println(array[1]);
+		System.out.println(strArray[1]);
+	}
+	
 	void appArray() {
 		int[] inputValue = new int[5];
 		int total = 0;
@@ -219,6 +232,11 @@ class MorningClass {
 		
 		for(int i = 0 ; i < subjects.length ; i++) {
 			System.out.println(subjects[i] + "의 성적을 입력 : ");
+			
+			
+//			NOTE :// BUG ==>> If the user input 0 score in any Question 
+//							  Than program down.
+//							 
 			for(int j = 0; j < 4 ; j ++) {
 				System.out.println("No"+(j+1)+"의 성적은 : ");
 				if(Karr[j] == 0 && Earr[j] == 0 && Marr[j] == 0 ) {
