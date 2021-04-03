@@ -6,10 +6,14 @@ public class Main {
 
 	public static void main(String[] args) {
 	
+
+		
+		
+		
 		MorningClass mc = new MorningClass();
 		
 //		mc.stringArray();
-		mc.squareLogic();
+		mc.exercise11();
 		
 	}
 
@@ -134,6 +138,115 @@ class MorningClass {
 				System.out.println("10 ^ "+ String.format("%2d",i)+" = " + String.format("%11.0f", Math.pow(10,i)));
 			}
 		}
+	
+	void exercise08() {
+		
+		int[] arr = new int[100];
+		
+		System.out.println("입력할 숫자의 갯수 ? (100개 미만) :  ");
+		int num = sc.nextInt();
+		
+		int biggestNum = 0 ;
+		int biggestidx = 0 ;
+		
+		System.out.println(num + "개의 숫자를 입력하세요");
+		
+		for(int i =  0 ; i < num ; i ++) {
+			arr[i] = sc.nextInt();
+			
+			if(biggestNum < arr[i]) {
+				biggestNum = arr[i];
+				biggestidx = i;
+			}
+		}
+			System.out.println("가장 큰값은 "+ arr[biggestidx] + "이고" +(biggestidx+1)+ "번째 값 입니다.");
+		}
+	
+	void exercise09() {
+		int num = 10;
+		long result = 1;
+		for(int i=0; i<=10; i++) {
+			System.out.println("10 ^ " + String.format("%2d", i) + " = " + String.format("%11d", result));
+			result *= num;
+		}
+	 }
+	
+	void exercise10() {
+		
+		int Karr[] = new int[4];
+		int Earr[] = new int[4];
+		int Marr[] = new int[4];
+		int total[] = new int[4] ;
+
+		System.out.println("Korean의 성적을 입력 : ");
+		for(int i = 0 ; i <Karr.length; i ++) {
+			System.out.println("No"+i+"의 성적은 : ");
+			Karr[i] = sc.nextInt();
+			  
+		}
+		
+		System.out.println("English의 성적을 입력 : ");
+		for(int i = 0 ; i <Earr.length; i ++) {
+			System.out.println("No"+i+"의 성적은 : ");
+			Earr[i] = sc.nextInt();
+			  
+		}
+		
+		System.out.println("Mathmatics 의 성적을 입력 :");
+		
+		for(int i = 0 ; i <Marr.length; i ++) {
+			System.out.println("No"+i+"의 성적은 : ");
+			Marr[i] = sc.nextInt();  
+		}
+		
+		
+		System.out.println("\t"+"Korean"+"\t"+"\t"+"English"+"\t"+"\t"+"Mathmatics"+"\t"+"Total"+"\t"+"Average");
+		 for(int i = 0 ; i < Karr.length; i ++) {
+			 
+			 total[i] =Karr[i] + Earr[i] + Marr[i]; 
+			 
+			 System.out.println("No"+ (i+1) +"\t"+String.format("%6d", Karr[i])+"\t"+String.format("%12d", Earr[i])+"\t"+String.format("%14d", Marr[i])+"\t"+String.format("%11d", total[i])+"\t"+String.format("%6d", total[i]/3));
+		 }
+		
 	}
+	void exercise11() {
+		String[] subjects = { "Korean" , "English" , "Mathmetics" };
+		int Karr[] = new int[4];
+		int Earr[] = new int[4];
+		int Marr[] = new int[4];
+		int total[] = new int[4];
+		
+		
+		for(int i = 0 ; i < subjects.length ; i++) {
+			System.out.println(subjects[i] + "의 성적을 입력 : ");
+			for(int j = 0; j < 4 ; j ++) {
+				System.out.println("No"+(j+1)+"의 성적은 : ");
+				if(Karr[j] == 0 && Earr[j] == 0 && Marr[j] == 0 ) {
+					Karr[j] = sc.nextInt();
+				} else if(Karr[j] != 0 && Earr[j] == 0 && Marr[j] == 0 ) {
+					Earr[j] = sc.nextInt();
+				} else if(Karr[j] != 0 && Earr[j] != 0 && Marr[j] == 0 ) {
+					Marr[j] = sc.nextInt();
+				}
+				total[j] = Karr[j] + Earr[j] + Marr[j];
+				
+			}
+			
+		}
+		
+		System.out.println("\t"+"Korean"+"\t"+"\t"+"English"+"\t"+"\t"+"Mathmatics"+"\t"+"Total"+"\t"+"Average");
+		 for(int i = 0 ; i < Karr.length; i ++) {
+			 
+			 total[i] =Karr[i] + Earr[i] + Marr[i]; 
+			 
+			 System.out.println("No"+ (i+1) +"\t"+String.format("%6d", Karr[i])+"\t"+String.format("%12d", Earr[i])+"\t"+String.format("%14d", Marr[i])+"\t"+String.format("%11d", total[i])+"\t"+String.format("%6d", total[i]/3));
+		 }
+	}
+
+		
+	}
+	
+	
+
 	
 
