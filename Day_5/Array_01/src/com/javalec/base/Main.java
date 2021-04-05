@@ -6,13 +6,25 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-
+		
+		float i = 100;
+		
+		System.out.println(String.format("%-010.2f",i));
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		MorningClass mc = new MorningClass();
 		
-		mc.basicConceptArray_2();
+		
 //		mc.exercise11();
 		
 	}
@@ -47,13 +59,15 @@ class MorningClass {
 		
 	}
 	void basicConceptArray_2() {
-		
-//		when initialized Array with syntax, On default, every value's are setting in 0 
+//		Note : //
+//		when initialized Int Array with syntax, On default, every value's are setting in 0 
+//						String Array -> Null
 		
 		int[] array = new int[4];
 		String[] strArray = new String[4];
 		
 //		Output : 0
+//			   : null
 		
 		System.out.println(array[1]);
 		System.out.println(strArray[1]);
@@ -236,7 +250,10 @@ class MorningClass {
 			
 //			NOTE :// BUG ==>> If the user input 0 score in any Question 
 //							  Than program down.
-//							 
+//			
+//			Using switch syntax to prepare get input 0 than ask twice
+//			
+							 
 			for(int j = 0; j < 4 ; j ++) {
 				System.out.println("No"+(j+1)+"의 성적은 : ");
 				if(Karr[j] == 0 && Earr[j] == 0 && Marr[j] == 0 ) {
