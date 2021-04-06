@@ -63,7 +63,7 @@ class MorningClass {
 	
 	
 }
-	
+
 	
 	void Pyramid() {
 		
