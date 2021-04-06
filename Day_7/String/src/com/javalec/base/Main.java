@@ -12,7 +12,7 @@ public class Main {
 //		anc.string();
 //		anc.stringBuilder();
 		
-		anc.randomRSP();
+//		anc.randomRSP();
 		
 	}
 
@@ -164,6 +164,9 @@ class AfterNoonClass{
 		if(arrCom[i].equals(arrMy[num])) {
 			System.out.println("Draw");
 		}else {
+			//Compare with index number ? //
+			/* String[] arrMy = {"P","R","S"} => index same index num >> victory
+			 * Lose / Draw Add & divide & multiply */
 			if(i == 1 && num == 0 || i == 2 && num == 1 || i == 0 && num == 2) {
 				System.out.println("You Win!");
 			}else {
@@ -171,6 +174,31 @@ class AfterNoonClass{
 			}
 			
 		}
+		
+	}
+	
+	void intString() {
+		/*MVC pattern == design (constructure)
+		 * Model (DB) && View && Controller (WEB)
+		 */
+		
+		int num1 = 123;
+		String str1 = "12345";
+		String str2 = "ABCDE";
+		
+		// num1 (int) => (String) 
+		String str3 = Integer.toString(num1);
+//		System.out.println(str1 + str3);
+		
+//		str1 (String) => (int)
+		int num2 = Integer.parseInt(str1);
+//		System.out.println(num1 + num2);
+		
+		Double.toString(num2);
+		
+		
+		
+		
 		
 	}
 }

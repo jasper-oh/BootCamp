@@ -22,8 +22,6 @@ class OrientedProgram {
 		}else {
 			System.out.println("짝수");
 		}
-		
-		
-		
+
 	}
 }
