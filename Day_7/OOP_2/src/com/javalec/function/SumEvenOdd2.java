@@ -4,7 +4,7 @@ package com.javalec.function;
 public class SumEvenOdd2 {
 
 	//Field
-	int num = 0 ;
+	public int num = 0 ;
 	
 	//Method (함수)
 	public void sumCalc(int num1, int num2) {
@@ -17,6 +17,7 @@ public class SumEvenOdd2 {
 		System.out.println(num);
 	}
 	
+
 	public void evenOdd() {
 		String result;
 		if(num % 2 == 1) {

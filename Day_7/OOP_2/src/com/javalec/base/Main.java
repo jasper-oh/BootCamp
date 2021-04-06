@@ -23,6 +23,9 @@ public class Main {
 		SumEvenOdd2 seo2 = new SumEvenOdd2();
 		
 		seo2.sumCalc(1, 10);
+		
+		int newNum = seo2.num;
+		
 		seo2.evenOdd();		
 	}
 
