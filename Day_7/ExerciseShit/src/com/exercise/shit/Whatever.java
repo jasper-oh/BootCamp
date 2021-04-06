@@ -5,10 +5,7 @@ import java.util.Scanner;
 public class Whatever {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		MorningClass mc = new MorningClass();
-		
-		
 		
 		
 			mc.exercise14();
@@ -20,13 +17,6 @@ public class Whatever {
 class MorningClass{
 	Scanner sc = new Scanner(System.in);
 	
-	
-	void loop() {
-		
-		MorningClass mc = new MorningClass();
-		mc.exercise14();
-		
-	}
 	
 	void exercise14() {
 		
