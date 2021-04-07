@@ -16,9 +16,20 @@ public class Main {
 		System.out.println(resultNum);
 		
 		// 결과값과 sub Class 에서 실행
-		
 		addNum.addPrint(num1,num2);
-
+		
+		//Constructor로 호춣
+		AddNum addNum2 = new AddNum(num1 , num2);
+		int resultNum2 = addNum2.addAction2();
+		System.out.println(resultNum2);
+		
+		
+		// Field 값으로 호출
+		addNum.num1 = num1;
+		addNum.num2 = num2;
+		
+		int resultNum3 = addNum.addAction2();
+		System.out.println(resultNum3);
 	}
 
 }
