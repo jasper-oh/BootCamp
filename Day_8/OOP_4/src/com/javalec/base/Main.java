@@ -13,7 +13,6 @@ public class Main {
 		System.out.print("몇단? : ");
 		int num1 = sc.nextInt();
 		
-		
 		Gugu gu = new Gugu(num1);
 		gu.guguPrint();
 		

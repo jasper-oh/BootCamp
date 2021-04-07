@@ -13,7 +13,11 @@ public class Gugu {
 	
 	public void guguPrint() {
 		for(int i = 1 ; i <=9 ; i++ ) {
-			System.out.println(num1 + "X" + i +"="+(i * num1));
+			if(i % 2 == 0) {
+				System.out.println(num1 + "X" + i +"="+(i * num1));
+			}else {
+				System.out.println(num1 + "X" + "=" + (i * num1));
+			}
 		}
 	}
 }
