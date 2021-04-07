@@ -3,12 +3,16 @@ package com.javalec.function;
 public class AddNum {
 	
 	
+	
+	
 	// Field
 	
 	public int num1 ,num2;	
 	
 	
-	// Constructor 
+//	 Constructor 
+//	 Constructor 는 무조건 class 의 명과 같아야 한다. 그래야 메소드와 Constructor 의 형태를 구분 할 수 있다. 
+	
 	public AddNum() {
 		
 	}
@@ -32,18 +36,14 @@ public class AddNum {
 	
 	
 	public int addAction(int x, int y ) {
-		
-		int sum = x + y;
-		
-		return sum;
-//		return x + y ;
-	
+		return x + y ;
 	}
 	
 	public void addPrint(int x, int y) {
 		int sum = x + y;
 		System.out.println(sum);
 	}
+	
 	
 	public int addAction2() {
 		return num1 + num2;
