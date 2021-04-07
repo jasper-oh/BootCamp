@@ -10,11 +10,13 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("몇단? : ");
-		int num1 = sc.nextInt();
 		
-		Gugu gu = new Gugu(num1);
-		gu.guguPrint();
+//		System.out.print("몇단? : ");
+//		int num1 = sc.nextInt();
+		Gugu gu = new Gugu(0);
+//		gu.guguPrint();
+		
+		gu.digitsSum();
 		
 		
 		
