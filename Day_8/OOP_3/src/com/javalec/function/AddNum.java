@@ -3,12 +3,29 @@ package com.javalec.function;
 public class AddNum {
 	
 	
+	// Field
 	
-	public int addAction(int num1, int num2 ) {
+	
+	// Constructor =>  굳이 만들어야 하나?
+	public AddNum() {
 		
-		int sum = num1 + num2;
+	}
+	
+	
+
+	// Method
+	
+	
+	public int addAction(int x, int y ) {
+		
+		int sum = x + y;
 		
 		return sum;
+	}
+	
+	public void addPrint(int x, int y) {
+		int sum = x + y;
+		System.out.println(sum);
 	}
 	
 	
