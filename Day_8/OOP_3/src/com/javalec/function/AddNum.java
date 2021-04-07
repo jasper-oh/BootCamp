@@ -6,7 +6,7 @@ public class AddNum {
 	// Field
 	
 	
-	// Constructor =>  굳이 만들어야 하나?
+	// Constructor
 	public AddNum() {
 		
 	}
