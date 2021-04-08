@@ -14,7 +14,7 @@ public class Main {
 //			
 //		}
 		
-		
+		// in Constructor I specificate method so don't need to make any instance
 		 new ThrowsClass();
 
 	}
