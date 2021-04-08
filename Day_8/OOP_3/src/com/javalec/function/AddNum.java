@@ -4,8 +4,8 @@ public class AddNum {
 	
 	
 	
-	
-	// Field
+// Field
+//	Grobal Variation && local variation.  difference
 	
 	public int num1 ,num2;	
 	
