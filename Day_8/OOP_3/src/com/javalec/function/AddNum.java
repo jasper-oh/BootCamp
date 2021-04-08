@@ -13,10 +13,9 @@ public class AddNum {
 //	 Constructor 
 //	 Constructor 는 무조건 class 의 명과 같아야 한다. 그래야 메소드와 Constructor 의 형태를 구분 할 수 있다. 
 	
-<<<<<<< HEAD
+
 	// Constructor
-=======
->>>>>>> oop_1_concept
+
 	public AddNum() {
 		
 	}
