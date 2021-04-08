@@ -10,6 +10,11 @@ public class DMBcellphone extends CellPhone {
 	
 	
 // Constructor
+	
+	public DMBcellphone() {
+		
+	}
+	
 	public DMBcellphone(String model, String color, int channel) {
 //		super();
 		this.model = model;
@@ -22,14 +27,14 @@ public class DMBcellphone extends CellPhone {
 	
 // Method
 	public void turnOnDmb() {
-		System.out.println("Channel" + channel + " Connecting....");
+		System.out.println("Channel " + channel + " Connecting....");
 		
 	}
 	
 	// Current field announce keyword => <this>
 	public void changeChannelDmb(int channel) {
 		this.channel = channel;
-		System.out.println("Channel" + channel + "changed");
+		System.out.println("Channel " + channel + " changed");
 	}
 	
 	public void turnOffDmb() {

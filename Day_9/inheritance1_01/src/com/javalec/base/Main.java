@@ -6,7 +6,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		DMBcellphone dmb = new DMBcellphone("JAVA PHONE","BLACK",10);
+//		DMBcellphone dmb = new DMBcellphone("JAVA PHONE","BLACK",10);
+		 DMBcellphone dmb = new DMBcellphone();
+		 dmb.model = "JAVA PHONE";
+		 dmb.color = "Black";
+		 dmb.channel = 10;
+		
 		
 		dmb.powerOn();
 		dmb.ringBell();
