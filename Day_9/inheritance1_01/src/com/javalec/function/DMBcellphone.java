@@ -22,7 +22,7 @@ public class DMBcellphone extends CellPhone {
 	
 // Method
 	public void turnOnDmb() {
-		System.out.println("Channel" + channel + "번 DMB방송 수신을 시작합니다.");
+		System.out.println("Channel" + channel + " Connecting....");
 		
 	}
 	
@@ -33,6 +33,6 @@ public class DMBcellphone extends CellPhone {
 	}
 	
 	public void turnOffDmb() {
-		System.out.println("DMB 수신을 멈춥니다. ");
+		System.out.println("Turning off DMB CHANNEL.");
 	}
 }
