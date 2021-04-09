@@ -95,13 +95,6 @@ public class GUI01 {
 	private JTextField getTextField_1() {
 		if (textField_1 == null) {
 			textField_1 = new JTextField();
-			textField_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-			
-					
-				}
-			});
 			textField_1.setHorizontalAlignment(SwingConstants.RIGHT);
 			textField_1.setBounds(29, 16, 75, 26);
 			textField_1.setColumns(10);
@@ -125,44 +118,7 @@ public class GUI01 {
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
 			btnNewButton = new JButton("+");
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					//1st
-//					String stNum1 =  textField_1.getText();
-//					String stNum2 =  textField_2.getText();
-//					
-//					int wkNum1 = Integer.parseInt(stNum1);
-//					int wkNum2 = Integer.parseInt(stNum2);
-//					int wkResult = wkNum1 + wkNum2;
-//					
-//					String stResult = Integer.toString(wkResult);
-//					textField_3.setText(stResult);
-					//2nd
-//					int wkNum1_1 = Integer.parseInt(textField_1.getText());
-//					int wkNum2_1 = Integer.parseInt(textField_2.getText());
-//					
-//					
-//					textField_3.setText(Integer.toString(wkNum1_1 + wkNum2_1));
-					
-					String str1 = textField_1.getText();
-					String str2 = textField_2.getText();
-					
-					int num1 = Integer.parseInt(str1);
-					int num2 = Integer.parseInt(str2);
-					
-					textField_3.setText(str1);
-					textField_5.setText(str2);
-					
-					lblNewLabel_1.setText("+");
-					lblNewLabel_2.setText("=");
-					
-					textField_6.setText(Integer.toString(num1 + num2));
-					
-					
-					
-					
-				}
-			});
+			btnNewButton.addActionListener(  );
 			btnNewButton.setBounds(186, 26, 61, 29);
 		}
 		return btnNewButton;
@@ -208,28 +164,7 @@ public class GUI01 {
 	private JButton getBtnX() {
 		if (btnX == null) {
 			btnX = new JButton("-");
-			btnX.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					
-					String str1 = textField_1.getText();
-					String str2 = textField_2.getText();
-					
-					int num1 = Integer.parseInt(str1);
-					int num2 = Integer.parseInt(str2);
-					
-					textField_3.setText(str1);
-					textField_5.setText(str2);
-					
-					lblNewLabel_1.setText("-");
-					lblNewLabel_2.setText("=");
-					
-					textField_6.setText(Integer.toString(num1 - num2));
-					
-					
-					
-				}
-			});
+			btnX.addActionListener( );
 			btnX.setBounds(245, 26, 61, 29);
 		}
 		return btnX;
@@ -237,25 +172,7 @@ public class GUI01 {
 	private JButton getBtnX_1() {
 		if (btnX_1 == null) {
 			btnX_1 = new JButton("x");
-			btnX_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				
-					int num1 = Integer.parseInt(textField_1.getText());
-					int num2 = Integer.parseInt(textField_2.getText());
-					
-					ButtonAction ba = new ButtonAction(num1 , num2 , "+");
-					
-					textField_3.setText();
-					textField_5.setText();
-//					
-//					lblNewLabel_1.setText("x");
-//					lblNewLabel_2.setText("=");
-//					
-//					textField_6.setText(Integer.toString(num1 * num2));
-					
-					
-				}
-			});
+			btnX_1.addActionListener(  );
 			btnX_1.setBounds(301, 26, 61, 29);
 		}
 		return btnX_1;
@@ -263,27 +180,7 @@ public class GUI01 {
 	private JButton getBtnNewButton_3() {
 		if (btnNewButton_3 == null) {
 			btnNewButton_3 = new JButton("/");
-			btnNewButton_3.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					String str1 = textField_1.getText();
-					String str2 = textField_2.getText();
-					
-					int num1 = Integer.parseInt(str1);
-					int num2 = Integer.parseInt(str2);
-					
-					textField_3.setText(str1);
-					textField_5.setText(str2);
-					
-					lblNewLabel_1.setText("/");
-					lblNewLabel_2.setText("=");
-					
-					textField_6.setText(Integer.toString(num1 / num2));
-					
-					
-					
-				}
-			});
+			btnNewButton_3.addActionListener(  );
 			btnNewButton_3.setBounds(357, 26, 61, 29);
 		}
 		return btnNewButton_3;
