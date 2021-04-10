@@ -9,31 +9,42 @@ public class ButtonAction {
 	
 	//Constructor
 	
-	public ButtonAction(int num1 , int num2) {
-		this.num1 = num1;
-		this.num2 = num2;
+	public ButtonAction(String num1 , String num2) {
+		this.num1 = Integer.parseInt(num1);
+		this.num2 = Integer.parseInt(num2);
 
 	}
 	
 	//Method
 	
-	public int addAction() {
-	
-		return String.num1 + num2;
+	public String addAction() {
 		
-	}
-	public int minusAction() {
+		result = num1 + num2;
 		
-		return num1 - num2;
+		return Integer.toString(result);
+		
 	}
 	
-	public int muliplyAction() {
+	public String minusAction() {
 		
-		return num1 * num2;
+		result = num1 - num2;
+		
+		return Integer.toString(result);
 	}
-	public int divideAction() {
+	
+	public String muliplyAction() {
 		
-		return num1 / num2;
+		result = num1 * num2;
+		
+		return Integer.toString(result);
+	}
+	
+	public String divideAction() {
+		
+		double divResult = num1 / (num2*(1.0));
+		
+		String result = String.format("%4.2f",divResult);
+		return result;
 	}
 	
 	

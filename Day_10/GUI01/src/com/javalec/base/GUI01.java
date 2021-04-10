@@ -18,15 +18,14 @@ public class GUI01 {
 	private JTextField textField_3;
 	private JTextField textField_1;
 	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_1_2;
 	private JButton btnNewButton;
-	private JTextField textField;
-	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JButton btnX;
 	private JButton btnX_1;
 	private JButton btnNewButton_3;
+	
 
 	/**
 	 * Launch the application.
@@ -60,16 +59,14 @@ public class GUI01 {
 		frmAdd.setBounds(100, 100, 450, 214);
 		frmAdd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAdd.getContentPane().setLayout(null);
+		frmAdd.getContentPane().add(getTextField_1());
 		frmAdd.getContentPane().add(getTextField_2());
 		frmAdd.getContentPane().add(getTextField_3());
-		frmAdd.getContentPane().add(getTextField_1());
 		frmAdd.getContentPane().add(getLblNewLabel_1());
-		frmAdd.getContentPane().add(getLblNewLabel_2());
-		frmAdd.getContentPane().add(getBtnNewButton());
-		frmAdd.getContentPane().add(getTextField());
-		frmAdd.getContentPane().add(getTextField_4());
 		frmAdd.getContentPane().add(getTextField_5());
+		frmAdd.getContentPane().add(getLblNewLabel_1_2());
 		frmAdd.getContentPane().add(getTextField_6());
+		frmAdd.getContentPane().add(getBtnNewButton());
 		frmAdd.getContentPane().add(getBtnX());
 		frmAdd.getContentPane().add(getBtnX_1());
 		frmAdd.getContentPane().add(getBtnNewButton_3());
@@ -83,6 +80,9 @@ public class GUI01 {
 		}
 		return textField_2;
 	}
+	
+	
+	
 	private JTextField getTextField_3() {
 		if (textField_3 == null) {
 			textField_3 = new JTextField();
@@ -108,40 +108,13 @@ public class GUI01 {
 		}
 		return lblNewLabel_1;
 	}
-	private JLabel getLblNewLabel_2() {
-		if (lblNewLabel_2 == null) {
-			lblNewLabel_2 = new JLabel("");
-			lblNewLabel_2.setBounds(237, 125, 10, 16);
-		}
-		return lblNewLabel_2;
-	}
-	private JButton getBtnNewButton() {
-		if (btnNewButton == null) {
-			btnNewButton = new JButton("+");
-			btnNewButton.addActionListener(  );
-			btnNewButton.setBounds(186, 26, 61, 29);
-		}
-		return btnNewButton;
-	}
 	
-	
-	private JTextField getTextField() {
-		if (textField == null) {
-			textField = new JTextField();
-			textField.setHorizontalAlignment(SwingConstants.RIGHT);
-			textField.setColumns(10);
-			textField.setBounds(29, 120, 75, 26);
+	private JLabel getLblNewLabel_1_2() {
+		if (lblNewLabel_1_2 == null) {
+			lblNewLabel_1_2 = new JLabel("=");
+			lblNewLabel_1_2.setBounds(237, 125, 10, 16);
 		}
-		return textField;
-	}
-	private JTextField getTextField_4() {
-		if (textField_4 == null) {
-			textField_4 = new JTextField();
-			textField_4.setHorizontalAlignment(SwingConstants.RIGHT);
-			textField_4.setColumns(10);
-			textField_4.setBounds(29, 120, 75, 26);
-		}
-		return textField_4;
+		return lblNewLabel_1_2;
 	}
 	private JTextField getTextField_5() {
 		if (textField_5 == null) {
@@ -161,10 +134,27 @@ public class GUI01 {
 		}
 		return textField_6;
 	}
+	
+	
+//	 BUTTON ACTION STRUCTURE 
+	
+	
+	
+	private JButton getBtnNewButton() {
+		if (btnNewButton == null) {
+			btnNewButton = new JButton("+");
+			btnNewButton.addActionListener( new EventShitHandler( textField_1 , textField_2, textField_3,
+					textField_5,textField_6,lblNewLabel_1));
+			btnNewButton.setBounds(186, 26, 61, 29);
+		}
+		return btnNewButton;
+	}
+	
 	private JButton getBtnX() {
 		if (btnX == null) {
 			btnX = new JButton("-");
-			btnX.addActionListener( );
+			btnX.addActionListener( new EventShitHandler( textField_1 , textField_2, textField_3,
+					textField_5,textField_6,lblNewLabel_1));
 			btnX.setBounds(245, 26, 61, 29);
 		}
 		return btnX;
@@ -172,7 +162,8 @@ public class GUI01 {
 	private JButton getBtnX_1() {
 		if (btnX_1 == null) {
 			btnX_1 = new JButton("x");
-			btnX_1.addActionListener(  );
+			btnX_1.addActionListener( new EventShitHandler( textField_1 , textField_2, textField_3,
+					textField_5,textField_6,lblNewLabel_1));
 			btnX_1.setBounds(301, 26, 61, 29);
 		}
 		return btnX_1;
@@ -180,13 +171,71 @@ public class GUI01 {
 	private JButton getBtnNewButton_3() {
 		if (btnNewButton_3 == null) {
 			btnNewButton_3 = new JButton("/");
-			btnNewButton_3.addActionListener(  );
+			btnNewButton_3.addActionListener( new EventShitHandler( textField_1 , textField_2, textField_3,
+					textField_5,textField_6,lblNewLabel_1));
 			btnNewButton_3.setBounds(357, 26, 61, 29);
 		}
 		return btnNewButton_3;
 	}
+	
 }
 
+//class EventShitHandler implements ActionListener{
+//	
+//	JTextField textField_1;
+//	JTextField textField_2;
+//	JTextField textField_3;
+//	JTextField textField_5;
+//	JTextField textField_6;
+//	JLabel lblNewLabel_1;
+//	JButton btnNewButton;
+//	JButton btnX;
+//	JButton btnX_1;
+//	JButton btnNewJButton3;
+//	
+//	
+//	
+//	public EventShitHandler(JTextField textField_1 ,JTextField textField_2,JTextField textField_3, JTextField textField_5,
+//			JTextField textField_6, JLabel lblNewLabel_1) {
+//		this.textField_1 = textField_1;
+//		this.textField_2 = textField_2;
+//		this.textField_3 = textField_3;
+//		this.textField_5 = textField_5;
+//		this.textField_6 = textField_6;
+//		this.lblNewLabel_1 = lblNewLabel_1;
+//	}
+//	
+//	
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		
+//		if(textField_1.getText().equals("") || textField_2.getText().equals("")) {
+//			JOptionPane.showMessageDialog(btnNewJButton3, "공백 계산은 불가능 합니다.");
+//			return;
+//		}
+//		
+//		ButtonAction ba = new ButtonAction(textField_1.getText() , textField_2.getText());
+//		
+//		textField_3.setText(textField_1.getText());
+//		textField_5.setText(textField_2.getText());
+//		
+//		String button = e.getActionCommand();
+//		
+//		if(button.equals("+")) {
+//			lblNewLabel_1.setText("+");
+//			textField_6.setText(ba.addAction());
+//		}else if(button.equals("-")) {
+//			lblNewLabel_1.setText("-");
+//			textField_6.setText(ba.minusAction());
+//		}else if(button.equals("x")) {
+//			lblNewLabel_1.setText("x");
+//			textField_6.setText(ba.muliplyAction());
+//		}else if(button.equals("/")) {
+//			lblNewLabel_1.setText("/");
+//			textField_6.setText(ba.divideAction());
+//		}
+//	}	
+//}
 
 
 
