@@ -68,6 +68,7 @@ public class GUI_P1 {
 				ls.add(i);
 			}
 			
+			
 			comboBox = new JComboBox(ls.toArray());
 			
 			comboBox.addActionListener(new CalculatorEvent());
@@ -78,9 +79,11 @@ public class GUI_P1 {
 	private JComboBox getComboBox_1() {
 		if (comboBox_1 == null) {
 			comboBox_1 = new JComboBox();
+			
 			comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"+", "-", "x", "/"}));
 			
 			comboBox_1.addActionListener(new CalculatorEvent());
+			
 			comboBox_1.setBounds(129, 24, 93, 27);
 		}
 		return comboBox_1;
@@ -96,6 +99,7 @@ public class GUI_P1 {
 			comboBox_2 = new JComboBox(ls1.toArray());
 			
 			comboBox_2.addActionListener(new CalculatorEvent());
+			
 			comboBox_2.setBounds(230, 24, 93, 27);
 		}
 		return comboBox_2;
@@ -111,6 +115,13 @@ public class GUI_P1 {
 	
 	
 	class CalculatorEvent implements ActionListener{
+		
+		
+		
+		public CalculatorEvent() {
+		
+		}
+		
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -141,7 +152,7 @@ public class GUI_P1 {
 			case(3) :
 				num1 = (int) comboBox.getItemAt(num1Index);
 				num2 = (int) comboBox_2.getItemAt(num2Index);
-				sum = num1 * num2;
+				sum = num1 / num2;
 				break;
 			
 			}
@@ -149,9 +160,6 @@ public class GUI_P1 {
 			textField.setText(Integer.toString(sum));
 			
 		}
-		
-		
-		
-		
-	}
 }
+	}
+
