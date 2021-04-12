@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class CheckRadio {
 
@@ -16,6 +18,11 @@ public class CheckRadio {
 	private JCheckBox check_2;
 	private JButton btn_ok;
 	private JTextField textField;
+	private JRadioButton radio_1;
+	private JRadioButton radio_2;
+	private JButton btn_ok_1;
+	private JTextField textField_1;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -52,6 +59,10 @@ public class CheckRadio {
 		frame.getContentPane().add(getCheck_2());
 		frame.getContentPane().add(getBtn_ok());
 		frame.getContentPane().add(getTextField());
+		frame.getContentPane().add(getRadio_1());
+		frame.getContentPane().add(getRadio_2());
+		frame.getContentPane().add(getBtn_ok_1());
+		frame.getContentPane().add(getTextField_1());
 	}
 	private JCheckBox getCheck_1() {
 		if (check_1 == null) {
@@ -106,7 +117,57 @@ public class CheckRadio {
 		}
 		
 	}
+	private JRadioButton getRadio_1() {
+		if (radio_1 == null) {
+			radio_1 = new JRadioButton("KBS");
+			buttonGroup.add(radio_1);
+			radio_1.setBounds(258, 26, 141, 23);
+		}
+		return radio_1;
+	}
+	private JRadioButton getRadio_2() {
+		if (radio_2 == null) {
+			radio_2 = new JRadioButton("MBC");
+			buttonGroup.add(radio_2);
+			radio_2.setBounds(258, 62, 141, 23);
+		}
+		return radio_2;
+	}
+	private JButton getBtn_ok_1() {
+		if (btn_ok_1 == null) {
+			btn_ok_1 = new JButton("OK");
+			btn_ok_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					broadcheck();
+					
+				}
+
+				
+			});
+			btn_ok_1.setBounds(299, 112, 75, 29);
+		}
+		return btn_ok_1;
+	}
+	private JTextField getTextField_1() {
+		if (textField_1 == null) {
+			textField_1 = new JTextField();
+			textField_1.setColumns(10);
+			textField_1.setBounds(245, 191, 170, 29);
+		}
+		return textField_1;
+	}
 	
 	
-	
+	private void broadcheck() {
+		// TODO Auto-generated method stub
+		textField.setText("");
+		
+		if(radio_1.isSelected()) {
+			textField_1.setText("KBS was Chosen");
+		}
+		
+		if(radio_2.isSelected()) {
+			textField_1.setText("MBC was Chosen");
+		}
+	}
 }
