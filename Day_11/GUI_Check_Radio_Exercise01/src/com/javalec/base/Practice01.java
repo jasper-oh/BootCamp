@@ -123,6 +123,10 @@ public class Practice01 {
 		return textField_2;
 	}
 	
+	
+	/* setText Change toooo boring shit....
+	 *  TODO => change setText*/
+	
 	class EventButtonShit implements ActionListener{
 
 		@Override
@@ -131,13 +135,15 @@ public class Practice01 {
 			int num1 = Integer.parseInt(textField.getText());
 			int num2 = Integer.parseInt(textField_1.getText());
 			
+			
 			String rButton = e.getActionCommand();
 			
 			if( rButton.equals("ADD")) {
 				
 				String result = Integer.toString(num1 + num2);
 				
-				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
+
+				textField_2.setText( textField.getText() + "+" + textField_1.getText() + "=" + result);
 				
 				
 			}else if(rButton.equals("MINUS")) {
@@ -145,14 +151,14 @@ public class Practice01 {
 				
 				String result = Integer.toString(num1 - num2);
 				
-				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
+				textField_2.setText( textField.getText() + "-" + textField_1.getText() + "=" + result);
 				
 				
 			}else if(rButton.equals("MULTIPLY")) {
 				
 				String result = Integer.toString(num1 * num2);
 				
-				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
+				textField_2.setText( textField.getText() + "x" + textField_1.getText() + "=" + result);
 				
 			}else {
 				
@@ -163,6 +169,8 @@ public class Practice01 {
 				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
 			}
 				
+			
+			
 			
 			
 			
