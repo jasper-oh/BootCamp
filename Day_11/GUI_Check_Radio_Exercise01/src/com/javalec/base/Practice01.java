@@ -135,19 +135,24 @@ public class Practice01 {
 			
 			if( rButton.equals("ADD")) {
 				
+				String result = Integer.toString(num1 + num2);
 				
-				textField_2.setText(Integer.toString(num1 + num2));
+				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
 				
 				
 			}else if(rButton.equals("MINUS")) {
 
 				
-				textField_2.setText(Integer.toString(num1 - num2));
+				String result = Integer.toString(num1 - num2);
+				
+				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
 				
 				
 			}else if(rButton.equals("MULTIPLY")) {
 				
-				textField_2.setText(Integer.toString(num1 * num2));
+				String result = Integer.toString(num1 * num2);
+				
+				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
 				
 			}else {
 				
@@ -155,7 +160,7 @@ public class Practice01 {
 				Double divideResult = num1 / (num2 * 1.0);
 				String result = String.format("%4.2f", divideResult);
 				
-				textField_2.setText(result);
+				textField_2.setText( textField.getText() + "/" + textField_1.getText() + "=" + result);
 			}
 				
 			
