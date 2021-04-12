@@ -70,13 +70,7 @@ public class GUI_P1 {
 			
 			comboBox = new JComboBox(ls.toArray());
 			
-			comboBox.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					calculator();
-					
-				}
-			});
+			comboBox.addActionListener(new CalculatorEvent());
 			comboBox.setBounds(24, 24, 93, 27);
 		}
 		return comboBox;
@@ -86,13 +80,7 @@ public class GUI_P1 {
 			comboBox_1 = new JComboBox();
 			comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"+", "-", "x", "/"}));
 			
-			comboBox_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					calculator();
-					
-				}
-			});
+			comboBox_1.addActionListener(new CalculatorEvent());
 			comboBox_1.setBounds(129, 24, 93, 27);
 		}
 		return comboBox_1;
@@ -107,13 +95,7 @@ public class GUI_P1 {
 			
 			comboBox_2 = new JComboBox(ls1.toArray());
 			
-			comboBox_2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					calculator();
-					
-				}
-			});
+			comboBox_2.addActionListener(new CalculatorEvent());
 			comboBox_2.setBounds(230, 24, 93, 27);
 		}
 		return comboBox_2;
@@ -127,41 +109,49 @@ public class GUI_P1 {
 		return textField;
 	}
 	
-	private void calculator() {
-		
-		int num1Index = comboBox.getSelectedIndex();
-		int iterator = comboBox_1.getSelectedIndex();
-		int num2Index = comboBox_2.getSelectedIndex();
-		int sum = 0;
-		int num1,num2;
-		
-		switch(iterator) {
-		case(0) :
-			num1 = (int) comboBox.getItemAt(num1Index);
-			num2 = (int) comboBox_2.getItemAt(num2Index);
-			sum = num1 + num2;
-			break;
-		case(1) :
-			num1 = (int) comboBox.getItemAt(num1Index);
-			num2 = (int) comboBox_2.getItemAt(num2Index);
-			sum = num1 - num2;
-			break;
+	
+	class CalculatorEvent implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int num1Index = comboBox.getSelectedIndex();
+			int iterator = comboBox_1.getSelectedIndex();
+			int num2Index = comboBox_2.getSelectedIndex();
+			int sum = 0;
+			int num1,num2;
 			
-		case(2) :
-			num1 = (int) comboBox.getItemAt(num1Index);
-			num2 = (int) comboBox_2.getItemAt(num2Index);
-			sum = num1 * num2;
-			break;
+			switch(iterator) {
+			case(0) :
+				num1 = (int) comboBox.getItemAt(num1Index);
+				num2 = (int) comboBox_2.getItemAt(num2Index);
+				sum = num1 + num2;
+				break;
+			case(1) :
+				num1 = (int) comboBox.getItemAt(num1Index);
+				num2 = (int) comboBox_2.getItemAt(num2Index);
+				sum = num1 - num2;
+				break;
+				
+			case(2) :
+				num1 = (int) comboBox.getItemAt(num1Index);
+				num2 = (int) comboBox_2.getItemAt(num2Index);
+				sum = num1 * num2;
+				break;
+				
+			case(3) :
+				num1 = (int) comboBox.getItemAt(num1Index);
+				num2 = (int) comboBox_2.getItemAt(num2Index);
+				sum = num1 * num2;
+				break;
 			
-		case(3) :
-			num1 = (int) comboBox.getItemAt(num1Index);
-			num2 = (int) comboBox_2.getItemAt(num2Index);
-			sum = num1 * num2;
-			break;
-		
+			}
+			
+			textField.setText(Integer.toString(sum));
+			
 		}
 		
-		textField.setText(Integer.toString(sum));
+		
+		
 		
 	}
 }
