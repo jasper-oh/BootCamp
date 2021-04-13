@@ -201,6 +201,7 @@ public class GUI_calculator {
 	private JButton getBtnNewButton_6_1_2_1() {
 		if (btnNewButton_6_1_2_1 == null) {
 			btnNewButton_6_1_2_1 = new JButton("-");
+			btnNewButton_6_1_2_1.addActionListener(new EventCalculator());
 			btnNewButton_6_1_2_1.setBounds(227, 165, 48, 80);
 		}
 		return btnNewButton_6_1_2_1;
@@ -208,6 +209,7 @@ public class GUI_calculator {
 	private JButton getBtnNewButton_6_1_2_2() {
 		if (btnNewButton_6_1_2_2 == null) {
 			btnNewButton_6_1_2_2 = new JButton("x");
+			btnNewButton_6_1_2_2.addActionListener(new EventCalculator());
 			btnNewButton_6_1_2_2.setBounds(282, 68, 48, 80);
 		}
 		return btnNewButton_6_1_2_2;
@@ -215,6 +217,7 @@ public class GUI_calculator {
 	private JButton getBtnNewButton_6_1_2_3() {
 		if (btnNewButton_6_1_2_3 == null) {
 			btnNewButton_6_1_2_3 = new JButton("/");
+			btnNewButton_6_1_2_3.addActionListener(new EventCalculator());
 			btnNewButton_6_1_2_3.setBounds(282, 165, 48, 80);
 		}
 		return btnNewButton_6_1_2_3;
@@ -222,6 +225,7 @@ public class GUI_calculator {
 	private JButton getBtnNewButton_9() {
 		if (btnNewButton_9 == null) {
 			btnNewButton_9 = new JButton("C");
+			btnNewButton_9.addActionListener(new EventCalculator());
 			btnNewButton_9.setBounds(342, 106, 69, 69);
 		}
 		return btnNewButton_9;
@@ -238,21 +242,18 @@ public class GUI_calculator {
 			button.add(command);
 			numShow += command;
 			textField.setText(numShow);
-			
-			
-			int loc = numSplit(numShow);
-			
+				
 			if(command == "+" || command == "-" || command == "x" || command == "/") {
 				operator[0] = command;
-				System.out.println(operator[0]);
+				
 				num1 = Integer.parseInt(showNum2(button));
-				System.out.println(num1);
+				
 			}
 			
 			
 			if(command == "=") {
 				textField.setText("");
-				for(int i = loc+1 ; i < button.size()-1 ; i++) {
+				for(int i = numSplit(numShow)+1 ; i < button.size()-1 ; i++) {
 					String numt = button.get(i);
 					getNum2 += numt;	
 				}
@@ -274,7 +275,11 @@ public class GUI_calculator {
 				return;
 		    } 
 			
-		      
+		    if(command == "C") {
+		    	textField.setText("");
+		    	button.clear();
+		    	numShow = "";
+		    }
 		      
 		      
 		}
@@ -282,23 +287,14 @@ public class GUI_calculator {
 		
 		int numSplit(String numShow) {
 			
-		int num = button.indexOf("+");
+		int num = button.indexOf(operator[0]);
 			
 			
 			return num;
 		}
 		
 		
-		    
-		String showNum1(ArrayList<String> button) {
-			String num = "";
-			
-			for( int i = 0 ; i < button.size() ; i++) {
-				num += button.get(i);	
-			}
-
-			return num;
-		}
+	
 		String showNum2(ArrayList<String> button) {
 			String num = "";
 			
@@ -310,7 +306,7 @@ public class GUI_calculator {
 		}		
 		    	  
 		      
-		      
+/* 왜 집에 오면 항상 잘 풀리는 걸까 ?*/
 		      
 		      
 		      
