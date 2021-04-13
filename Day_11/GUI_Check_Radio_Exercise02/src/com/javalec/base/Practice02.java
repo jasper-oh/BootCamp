@@ -23,6 +23,8 @@ public class Practice02 {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
+	ArrayList<JCheckBox> checkArr = new ArrayList<>();
+	ArrayList<JLabel> labelArr = new ArrayList<>();
 	
 
 	
@@ -89,8 +91,8 @@ public class Practice02 {
 	}
 	private JCheckBox getChckbxNewCheckBox() {
 		if (chckbxNewCheckBox == null) {
-			chckbxNewCheckBox = new JCheckBox("plus");
-			  
+			chckbxNewCheckBox = new JCheckBox("+");
+			checkArr.add(chckbxNewCheckBox);  
 			chckbxNewCheckBox.addActionListener( new CheckEvent() );
 			chckbxNewCheckBox.setBounds(271, 31, 128, 23);
 		}
@@ -98,8 +100,8 @@ public class Practice02 {
 	}
 	private JCheckBox getChckbxNewCheckBox_1() {
 		if (chckbxNewCheckBox_1 == null) {
-			chckbxNewCheckBox_1 = new JCheckBox("minus");
-			
+			chckbxNewCheckBox_1 = new JCheckBox("-");
+			checkArr.add(chckbxNewCheckBox_1);
 			chckbxNewCheckBox_1.addActionListener( new CheckEvent() );
 			chckbxNewCheckBox_1.setBounds(271, 55, 128, 23);
 		}
@@ -107,8 +109,8 @@ public class Practice02 {
 	}
 	private JCheckBox getChckbxNewCheckBox_2() {
 		if (chckbxNewCheckBox_2 == null) {
-			chckbxNewCheckBox_2 = new JCheckBox("multiply");
-			
+			chckbxNewCheckBox_2 = new JCheckBox("x");
+			checkArr.add(chckbxNewCheckBox_2);
 			chckbxNewCheckBox_2.addActionListener( new CheckEvent() );
 			chckbxNewCheckBox_2.setBounds(271, 76, 128, 23);
 		}
@@ -116,8 +118,8 @@ public class Practice02 {
 	}
 	private JCheckBox getChckbxNewCheckBox_3() {
 		if (chckbxNewCheckBox_3 == null) {
-			chckbxNewCheckBox_3 = new JCheckBox("divide");
-			
+			chckbxNewCheckBox_3 = new JCheckBox("/");
+			checkArr.add(chckbxNewCheckBox_3);
 			chckbxNewCheckBox_3.addActionListener( new CheckEvent() );
 			chckbxNewCheckBox_3.setBounds(271, 100, 128, 23);
 		}
@@ -126,6 +128,7 @@ public class Practice02 {
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
 			lblNewLabel = new JLabel();
+			labelArr.add(lblNewLabel);
 			lblNewLabel.setBounds(30, 160, 130, 16);
 		}
 		return lblNewLabel;
@@ -133,6 +136,7 @@ public class Practice02 {
 	private JLabel getLblNewLabel_1() {
 		if (lblNewLabel_1 == null) {
 			lblNewLabel_1 = new JLabel();
+			labelArr.add(lblNewLabel_1);
 			lblNewLabel_1.setBounds(30, 188, 130, 15);
 		}
 		return lblNewLabel_1;
@@ -140,6 +144,7 @@ public class Practice02 {
 	private JLabel getLblNewLabel_2() {
 		if (lblNewLabel_2 == null) {
 			lblNewLabel_2 = new JLabel();
+			labelArr.add(lblNewLabel_2);
 			lblNewLabel_2.setBounds(30, 215, 130, 16);
 		}
 		return lblNewLabel_2;
@@ -147,78 +152,85 @@ public class Practice02 {
 	private JLabel getLblNewLabel_3() {
 		if (lblNewLabel_3 == null) {
 			lblNewLabel_3 = new JLabel();
+			labelArr.add(lblNewLabel_3);
 			lblNewLabel_3.setBounds(30, 243, 130, 16);
 		}
 		return lblNewLabel_3;
 	}
 	
 	class CheckEvent implements ActionListener {
-	
+		String[] operator = {"+","-","x","/"};
+		
+		
+		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
+			
+			if(textField.getText().equals("")) {
+				textField.setText("0");
+			}
+			if(textField_1.getText().equals("")){
+				textField_1.setText("0");
+			}
+			
+			
+			
+			for(int i = 0 ; i < checkArr.size() ; i ++) {
+				if(checkArr.get(i).isSelected() == true) {
+					labelArr.get(i).setText(setLabel(operator[i]));
+				}else {
+					labelArr.get(i).setText("");
+				}
+				
+			}
+		
+		}
+		
+		String setLabel(String operator) {
 			int num1 =Integer.parseInt(textField.getText());
 			int num2 =Integer.parseInt(textField_1.getText());
+			int result = 0; 
 			
-			// add
-			if(chckbxNewCheckBox.isSelected() == true) {
-				
-				lblNewLabel.setText(String.format("%d",num1 + num2));
-				
-			}else {
-				lblNewLabel.setText("");
-			}
-			
-			// minus
-			if(chckbxNewCheckBox_1.isSelected() == true) {
-				if(lblNewLabel.getText().equals("")) {
-					lblNewLabel.setText(String.format("%d",num1 - num2));
-				}else {
-					lblNewLabel_1.setText(String.format("%d",num1 - num2));
+			switch(operator) {
+			case("+") : 
+				result = num1 + num2;
+				break;
+			case("-") : 
+				result = num1 - num2;
+				break;
+			case("x") : 
+				result = num1 * num2;
+				break;
+			case("/") : 
+				if( num1 == 0 || num2 == 0) {
+					return num1 + operator + num2 + " =  0";				
 				}
+				double doubleResult = num1 / (num2 * 1.0);
+				doubleResult = Math.round(doubleResult*1000)/1000.0;
 				
-			}else {
-				lblNewLabel_1.setText("");
+				return num1 + operator + num2 + " = " + Double.toString(doubleResult);
+				
 			}
-			
-			// multiply
-			
-			if(chckbxNewCheckBox_2.isSelected() == true) {
-				if(lblNewLabel.getText().equals("")) {
-					lblNewLabel.setText(String.format("%d",num1 * num2));
-				}else if(lblNewLabel_1.getText().equals("")) {
-					lblNewLabel_1.setText(String.format("%d",num1 * num2));
-				}else {
-					lblNewLabel_2.setText(String.format("%d", num1 * num2));
-				}
-			}else {
-				lblNewLabel_2.setText("");
-			}
-			
-			// Divide
-			
-			if(chckbxNewCheckBox_3.isSelected() == true) {
-				double divide = num1 / (num2 * 1.0);
-				String sDivide = Double.toString(divide);
 
-				if(lblNewLabel.getText().equals("")) {
-					lblNewLabel.setText(sDivide);					
-				}else if(lblNewLabel_1.getText().equals("")) {
-					lblNewLabel_1.setText(sDivide);
-				}else if(lblNewLabel_2.getText().equals("")) {
-					lblNewLabel_2.setText(sDivide);
-				}else {
-					lblNewLabel_3.setText(sDivide);
-				}
-				
-			}else {
-				lblNewLabel_3.setText("");
-			}
+			return num1 + operator + num2 +"=" + Integer.toString(result);
 			
-			
-
+		}
 		
+		void setLabelLocation() {
+			for(int i = 0 ; i < 3;i++) {
+				if(labelArr.get(i).getText().equals("")) {
+					for(int j = i ; j<4;j++) {
+						if(!labelArr.get(i).getText().equals("")) {
+							labelArr.get(i).setText(labelArr.get(i).getText());
+							labelArr.get(j).setText("");
+							break;
+							
+						};
+					}
+				}
 			}
-	
+		}
 	}
 }
 	
