@@ -3,6 +3,7 @@ package com.javalec.base;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -253,8 +254,16 @@ public class GUI_calculator {
 			/* Checking operator button */
 			
 			if(command == "+" || command == "-" || command == "x" || command == "/") {
-				operator[0] = command;
 				
+				
+				if(showNum2(button).equals("")) {
+					JOptionPane.showMessageDialog(null, "Please enter number first");
+					textField.setText("");
+					afterCheck();
+					return;
+				}
+				
+				operator[0] = command;
 				num1 = Integer.parseInt(showNum2(button));
 				return;
 			}
