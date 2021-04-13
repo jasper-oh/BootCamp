@@ -25,17 +25,17 @@ public class GUI_calculator {
 	private JButton btnNewButton_6_1;
 	private JButton btnNewButton_6_1_1;
 	private JButton btnNewButton_6_1_2;
+	private JButton btnNewButton_6_1_2_1;
+	private JButton btnNewButton_6_1_2_2;
+	private JButton btnNewButton_6_1_2_3;
+	private JButton btnNewButton_9;
 	ArrayList<String> button= new ArrayList<>();
-	ArrayList<String> button2 = new ArrayList<>();
 	int num1;
 	int num2;
 	String numShow = "";
 	String[] operator = new String[1];
 	int result;
-	private JButton btnNewButton_6_1_2_1;
-	private JButton btnNewButton_6_1_2_2;
-	private JButton btnNewButton_6_1_2_3;
-	private JButton btnNewButton_9;
+	String getNum2 = "";
 	
 	
 	
@@ -233,8 +233,6 @@ public class GUI_calculator {
 	
 	class EventCalculator implements ActionListener{
 		
-		String getNum2 = "";
-		
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -242,12 +240,23 @@ public class GUI_calculator {
 			button.add(command);
 			numShow += command;
 			textField.setText(numShow);
+			
+			
+			if(command == "C") {
+		    	textField.setText("");
+		    	button.clear();
+		    	afterCheck();
+		    	return;
+		    }
+			
 				
+			/* Checking operator button */
+			
 			if(command == "+" || command == "-" || command == "x" || command == "/") {
 				operator[0] = command;
 				
 				num1 = Integer.parseInt(showNum2(button));
-				
+				return;
 			}
 			
 			
@@ -261,40 +270,45 @@ public class GUI_calculator {
 				if(operator[0] == "+") {
 					result = num1 + num2;
 					textField.setText(Integer.toString(result));
+					afterCheck();
 				}else if(operator[0] == "-") {
 					result = num1 - num2;
 					textField.setText(Integer.toString(result));
+					afterCheck();
 				}else if(operator[0] == "x") {
 					result = num1 * num2;
 					textField.setText(Integer.toString(result));
+					afterCheck();
 				}else if(operator[0] == "/") {
-					double result = num1 / (num2 * 0.1);
+					double result = num1 / (num2 * 1.0);
 					String divResult = Double.toString(result);
 					textField.setText(divResult);
+					afterCheck();
 				}
+				
 				return;
 		    } 
 			
-		    if(command == "C") {
-		    	textField.setText("");
-		    	button.clear();
-		    	numShow = "";
-		    }
+		    
 		      
 		      
 		}
 		
+		void afterCheck() {
+			numShow = "";
+			button.clear();
+			result = 0 ;
+			getNum2 = "";
+		}
+		
 		
 		int numSplit(String numShow) {
-			
-		int num = button.indexOf(operator[0]);
-			
+			int num = button.indexOf(operator[0]);
 			
 			return num;
 		}
 		
 		
-	
 		String showNum2(ArrayList<String> button) {
 			String num = "";
 			
@@ -307,23 +321,6 @@ public class GUI_calculator {
 		    	  
 		      
 /* 왜 집에 오면 항상 잘 풀리는 걸까 ?*/
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-		      
-	
-		
-		
 	}
 	
 }
