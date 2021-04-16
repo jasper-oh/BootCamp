@@ -1,6 +1,6 @@
-### MySql start
+# MySql start
 
-#### CLI
+## CLI
 
 - terminal command 💻
 
@@ -75,6 +75,8 @@ $ mysql> kill <ProcessID>
 $ mysqld --skip-grant
 
 ```
+
+---
 
 #### GUI
 
