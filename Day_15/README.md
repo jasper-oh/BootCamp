@@ -10,7 +10,8 @@ Using Path
 #### GUI
 
 - MySql workbench 🐬
-< Command>
+
+> < Command>
 
 ```sql
 use education;
