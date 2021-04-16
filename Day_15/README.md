@@ -30,6 +30,7 @@ select * from professor;
 
 select pname from professor where pdept = '컴퓨터공학과';
 
+-- If update query isn't work, evenif you toggle safe update
 SET SQL_SAFE_UPDATES = 0;
 
 select pname,pdept from professor where paddress = '서울';
