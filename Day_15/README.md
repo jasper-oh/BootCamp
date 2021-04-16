@@ -1,11 +1,80 @@
 ### MySql start
 
-
 #### CLI
+
 - terminal command 💻
 
 Using Path
 
+```ssh
+
+#### 1. Connected with Command Line Client
+
+ mysql -h서버 -u아이디 -p비밀번호 데이터베이스명
+
+$ mysql -h192.168.0.100 -uroot -prootpassword testdb
+
+$ mysql -uroot -prootpassword
+
+$ mysql -uroot -p
+$ Enter password: ****
+
+
+#### 2. Database Create and Delete
+
+$ mysql> CREATE DATABASE testdb CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+$ mysql> CREATE DATABASE testdb;
+
+$ mysql> DROP DATABASE testdb;
+
+#### 3. User add and delete
+
+$ mysql> CREATE USER 'testdbuser'@'localhost' IDENTIFIED BY 'password';
+
+$ mysql> GRANT ALL PRIVILEGES ON *.* TO 'testdbuser'@'localhost' WITH GRANT OPTION;
+
+$ mysql> GRANT ALL PRIVILEGES ON testdb.* TO 'testdbuser'@'localhost';
+
+$ mysql> CREATE USER 'testdbuser'@'%' IDENTIFIED BY 'password';
+
+$ mysql> REVOKE ALL PRIVILEGES *.* FROM 'testdbuser'@'localhost';
+
+$ mysql> DROP USER 'testdbuser'@'localhost';
+
+#### 4. Database Select and Query
+
+$ mysql> show databases;
+
+$ mysql> use testdb;
+
+$ mysql> show tables;
+
+$ mysql> show tables like 'time%';
+
+5. 데이터베이스 및 테이블 생성 스크립트 보기
+
+$ mysql> show create databse testdb;
+
+$ mysql> show create table tb_test
+
+#### 6. Launch Query Scrip file
+
+$ mysql -utestdbuser -p testdb < insert.sql
+$ Enter password: ****
+
+$ mysql> source D:\insert.sql;
+
+7. Checking Process
+
+$ mysql> show processlist;
+$ mysql> kill <ProcessID>
+
+8. Find manager password
+
+$ mysqld --skip-grant
+
+```
 
 #### GUI
 
@@ -21,7 +90,7 @@ select sname,sdept from student;
 -- Count the number of studuent
 select count(*) from student;
 
--- Change the 
+-- Change the
 update student set scode = 'S001' where sname = '박소명';
 
 select * from student where sdept = '컴퓨터공학과';
@@ -61,7 +130,7 @@ update advise set apcode = 'P005' where apcode ='p007';
 
 -- Get lecture time 2 hours subject increase 1 hour and change labortory to  Lab1
 select * from course;
-update course set ctime ='3',croom ='LAB1' where ctime = '2'; 
+update course set ctime ='3',croom ='LAB1' where ctime = '2';
 
 -- delete
 
@@ -72,10 +141,4 @@ delete from student where sdept = '국문학과';
 create table if not exists `studentB` select * from `student`;
 ```
 
-
-
-
-
 ---
-
-
