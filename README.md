@@ -24,3 +24,4 @@
 [![Xcode Badge](https://img.shields.io/badge/Xcode-1575F9?style=for-the-badge&logo=xcode&logoColor=black)](http://developer.apple.com/)
 
 
+[![MYSQL Badge](https://img.shields.io/badge/MYSQL-3DDC84?style=for-the-badge&logo=sql&logoColor=black)](https://www.dev.sql.com)
