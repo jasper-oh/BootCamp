@@ -1,4 +1,4 @@
-
+```sql
 use test;
 select * from employee_tbl;
 select count(*) from employee_tbl;
@@ -96,6 +96,89 @@ select strcmp('aaa','aaa');
 select substring('abcdefg',5);
 
 select substring('abcdefg',1,3);
+```
+### 👉 test.sql Practice query 
+--- 
+```sql
+use madang;
+
+select bookname
+from book
+where bookid = "1";
+
+select * from book;
+
+select bookname
+from book
+where price >= 20000;
+
+select * from book;
+
+
+select c.name , sum(o.saleprice)
+from customer c, orders o, book b
+where c.custid = o.custid and o.bookid = b.bookid and c.name = "박지성";
+
+select c.name, count(o.orderid)
+from customer c , orders o
+where c.name ='박지성' and o.custid= c.custid;
+
+select c.name, count(distinct(b.publisher))
+from customer c, orders o, book b
+where c.name='박지성' and c.custid = o.custid and o.bookid = b.bookid;
+```
+> 🙌 new concept of "distinct" => 중복제거
+
+
+```sql
+select b.bookname, b.price, b.price - o.saleprice
+from book b, orders o,customer c 
+where c.name = "박지성" and b.bookid = o.bookid and c.custid = o.custid;
+
+select orderid
+from orders 
+where date(orderdate) between "2014-07-04" and "2014-07-07";
+
+select orderid
+from orders 
+where not orderdate between "2014-07-04" and "2014-07-07";
+```
+> 🙌 new concept of "not" orderdate
+
+```sql
+select name, address
+from customer
+where name like "김%";
+```
+> 🙌  like + "%" => 해당 문자를 무조건 포함한것을 보여준다.
+
+```sql
+select name, address
+from customer
+where name like "김%아";
+
+select c.name, sum(b.price)
+from customer c , book b, orders o
+where c.custid = o.custid and o.bookid = b.bookid
+group by c.name;
+
+
+select * from customer;
+select * from orders;
+
+select c.name, c.address
+from customer c
+WHERE c.custid not in (SELECT o.custid FROM orders o WHERE c.custid = o.custid);
+```
+> little bit confused  🙌 new concept with sub-query && where something not in ( sub-query )  
+> To use IN, you must have a set ... 
+
+```sql
+select c.name, o.custid
+from orders o ,customer c
+where c.custid = o.custid;
+
+```
 
 
 
