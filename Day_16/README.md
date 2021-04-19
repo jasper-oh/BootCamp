@@ -1,3 +1,6 @@
+
+### 👉 test.sql Practice query 
+
 ```sql
 use test;
 select * from employee_tbl;
@@ -41,13 +44,16 @@ select max(e.daily_typing_page)
 from employee_tbl;
 
 
--- employee_tbl 에서 이름별 id, name, 최대 타이핑수 출력 오류 ..?
+
+-- employee_tbl 에서 이름별 id, name, 최대 타이핑수 출력 ?-?
 select id,name, max(daily_typing_pages)
 from employee_tbl
 group by id, name;
+```
+> ⚡️ id 값을 같이 출력하려고 할때, 동명이인으로 판단하여, 최댓값을 나오게 하지 않고, 각각의 모든 값을 나오게 한다.
+> pk 문제일까? where 문으로 해결할 수 있을까? + 추가) view 를 통해서도 가능할까?
 
-
-
+```sql
 -- employee_tbl 에서 이름별 name, 최소 타이핑수
 select name, min(daily_typing_pages)
 from employee_tbl 
@@ -97,7 +103,7 @@ select substring('abcdefg',5);
 
 select substring('abcdefg',1,3);
 ```
-### 👉 test.sql Practice query 
+### 👉 madang.sql Practice query 
 --- 
 ```sql
 use madang;
