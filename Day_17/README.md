@@ -97,7 +97,20 @@ public class AddressInsert {
             ps = conn_mysql.prepareStatement(query);
             ps.setString(1, tfName.getText().trim());
             ps.executeUpdate(); // EndInsert
-            
+```
+> If you want get in to multiple data
+
+```java
+String query = "insert into userinfo (name,telno,address,email,relation) values (?,?,?,?,?) ";
+ps.setString(1, tfName.getText().trim());
+        ps.setString(2, tfPhone.getText().trim());
+        ps.setString(3, tfAddress.getText().trim());
+        ps.setString(4, tfEmail.getText().trim());
+        ps.setString(5, tfRelate.getText().trim());
+```
+++
+
+```java
 //            DB CONNECTION CANCEL
             conn_mysql.close();
             
