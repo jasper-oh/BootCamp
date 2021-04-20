@@ -23,8 +23,9 @@
 [![ANDORID STUDIO Badge](https://img.shields.io/badge/AndroidStudio-6DB33F?style=for-the-badge&logo=androidstudio&logoColor=white)](http://android.com/)
 
 #### 💿 DB
-[![MYSQL](https://img.shields.io/badge/Mysql -FFFFFF?style=for-the-badge&logo=mysql&logoColor=white)](http://mysql.com/)
-[![WORKBENCH](https://img.shields.io/badge/Workbench -FFFFFF?style=for-the-badge&logo=workbench&logoColor=white)](http://mysql.com/)
+
+[![MYSQL Badge](https://img.shields.io/badge/Mysql -FFFFFF?style=for-the-badge&logo=mysql&logoColor=white)](http://mysql.com/)
+[![WORKBENCH Badge](https://img.shields.io/badge/Workbench -FFFFFF?style=for-the-badge&logo=workbench&logoColor=white)](http://mysql.com/)
 
 
 
