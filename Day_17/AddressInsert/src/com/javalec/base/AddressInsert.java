@@ -121,27 +121,39 @@ public class AddressInsert {
 	// User info insert 
 	private void insertAction() {
 //		아래 물음표를 사용하기 위해서 정의한 PreparedStatement
+		
+		if(tfName.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "name is empty");
+		}else if(tfPhone.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "phone is empty");
+		}else if(tfAddress.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "address is empty");
+		}else if(tfEmail.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Email is empty");
+		}else if(tfRelate.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "relate is empty");
+		}else {
+		
 		PreparedStatement ps = null;
+	
+		
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn_mysql = DriverManager.getConnection(url_mysql,id_mysql,pw_mysql);
 			Statement stmt_mysql = conn_mysql.createStatement();
+
 			
 			String query = "insert into userinfo (name,telno,address,email,relation) values (?,?,?,?,?) ";
-			
-			
 			ps = conn_mysql.prepareStatement(query);
 						
+			
 			ps.setString(1, tfName.getText().trim());
 			ps.setString(2, tfPhone.getText().trim());
 			ps.setString(3, tfAddress.getText().trim());
 			ps.setString(4, tfEmail.getText().trim());
 			ps.setString(5, tfRelate.getText().trim());
-			
-			
-			
-			
-			
+		
 			ps.executeUpdate(); // 입력끝 
 			
 			
@@ -151,9 +163,11 @@ public class AddressInsert {
 			
 			JOptionPane.showMessageDialog(null, tfName.getText() + " information is insert");
 			
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-	}
+		}
+	}	
 }
