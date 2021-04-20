@@ -200,9 +200,9 @@ public class AddressInsert {
 	}
 	
 	
-	
+//	TODO Using ArrayList
 	private void insertFieldCheckVer1() {
-//		TODO Using ArrayList
+
 //		ArrayList<JTextField> tf = new ArrayList<JTextField>();
 //		ArrayList<JLabel> jl = new ArrayList<JLabel>();
 //		jl.add();
@@ -218,6 +218,5 @@ public class AddressInsert {
 //		}
 //		
 		
-
 	}
 }
