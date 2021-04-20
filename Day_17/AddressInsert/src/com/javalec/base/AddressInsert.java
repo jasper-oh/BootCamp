@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class AddressInsert {
@@ -122,17 +123,34 @@ public class AddressInsert {
 	private void insertAction() {
 //		아래 물음표를 사용하기 위해서 정의한 PreparedStatement
 		
-		if(tfName.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "name is empty");
-		}else if(tfPhone.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "phone is empty");
-		}else if(tfAddress.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "address is empty");
-		}else if(tfEmail.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Email is empty");
-		}else if(tfRelate.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "relate is empty");
-		}else {
+		ArrayList<JTextField> tb = new ArrayList<JTextField>();
+		tb.add(tfName);
+		tb.add(tfPhone);
+		tb.add(tfAddress);
+		tb.add(tfEmail);
+		tb.add(tfRelate);
+		
+		for(int i = 0; i < tb.size(); i++) {
+			if(tb.get(i).getText().isEmpty()){
+			JOptionPane.showMessageDialog(null, (i+1) + "field is empty");
+			}
+			
+			return;
+		}
+		
+		
+		// TODO JOptionPane 한번만 주고 해볼것
+//		if(tfName.getText().isEmpty()) {
+//			JOptionPane.showMessageDialog(null, "name is empty");
+//		}else if(tfPhone.getText().isEmpty()) {
+//			JOptionPane.showMessageDialog(null, "phone is empty");
+//		}else if(tfAddress.getText().isEmpty()) {
+//			JOptionPane.showMessageDialog(null, "address is empty");
+//		}else if(tfEmail.getText().isEmpty()) {
+//			JOptionPane.showMessageDialog(null, "Email is empty");
+//		}else if(tfRelate.getText().isEmpty()) {
+//			JOptionPane.showMessageDialog(null, "relate is empty");
+//		}else {
 		
 		PreparedStatement ps = null;
 	
@@ -169,5 +187,5 @@ public class AddressInsert {
 		}
 		
 		}
-	}	
+//	}	
 }
