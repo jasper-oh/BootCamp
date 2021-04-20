@@ -24,8 +24,9 @@
 
 #### 💿 DB
 
-[![MYSQL Badge](https://img.shields.io/badge/Mysql -FFFFFF?style=for-the-badge&logo=mysql&logoColor=white)](http://mysql.com/)
-[![WORKBENCH Badge](https://img.shields.io/badge/Workbench -FFFFFF?style=for-the-badge&logo=workbench&logoColor=white)](http://mysql.com/)
+[![MY SQL Badge](https://img.shields.io/badge/Mysql-FFFFFF?style=for-the-badge&logo=mysql&logoColor=white)](http://mysql.com/)
+
+[![WORK BENCH Badge](https://img.shields.io/badge/Workbench-FFFFFF?style=for-the-badge&logo=workbench&logoColor=white)](http://mysql.com/)
 
 
 
