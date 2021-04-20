@@ -25,6 +25,8 @@ public class AddressInsert {
 	private final String url_mysql = "jdbc:mysql://127.0.0.1/useraddress?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
 	private final String id_mysql = "root"; // %root 가 없으면 연결 안된다. 
 	private final String pw_mysql = "qwer1234";
+	
+	
 	private JTextField tfPhone;
 	private JTextField tfAddress;
 	private JTextField tfEmail;
@@ -75,8 +77,11 @@ public class AddressInsert {
 		JButton btnInsert = new JButton("Insert");
 		btnInsert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				insertAction();
 				
+				int i_chk = insertFieldCheck();
+				if(i_chk == 0) {
+				insertAction();
+				}
 			}
 		});
 		btnInsert.setBounds(294, 221, 117, 29);
@@ -120,38 +125,8 @@ public class AddressInsert {
 	}
 	
 	// User info insert 
-	private void insertAction() {
-//		아래 물음표를 사용하기 위해서 정의한 PreparedStatement
-		
-		ArrayList<JTextField> tb = new ArrayList<JTextField>();
-		tb.add(tfName);
-		tb.add(tfPhone);
-		tb.add(tfAddress);
-		tb.add(tfEmail);
-		tb.add(tfRelate);
-		
-		for(int i = 0; i < tb.size(); i++) {
-			if(tb.get(i).getText().isEmpty()){
-			JOptionPane.showMessageDialog(null, (i+1) + "field is empty");
-			}
-			
-			return;
-		}
-		
-		
-		// TODO JOptionPane 한번만 주고 해볼것
-//		if(tfName.getText().isEmpty()) {
-//			JOptionPane.showMessageDialog(null, "name is empty");
-//		}else if(tfPhone.getText().isEmpty()) {
-//			JOptionPane.showMessageDialog(null, "phone is empty");
-//		}else if(tfAddress.getText().isEmpty()) {
-//			JOptionPane.showMessageDialog(null, "address is empty");
-//		}else if(tfEmail.getText().isEmpty()) {
-//			JOptionPane.showMessageDialog(null, "Email is empty");
-//		}else if(tfRelate.getText().isEmpty()) {
-//			JOptionPane.showMessageDialog(null, "relate is empty");
-//		}else {
-		
+	private void insertAction() {		
+//			아래 물음표를 사용하기 위해서 정의한 PreparedStatement
 		PreparedStatement ps = null;
 	
 		
@@ -187,5 +162,62 @@ public class AddressInsert {
 		}
 		
 		}
-//	}	
+	
+	
+	private int insertFieldCheck() {
+		int i = 0;
+		String msg = "";
+		if(tfName.getText().isEmpty()) {
+			i++;
+			msg ="name ";
+			tfName.requestFocus();
+		}
+		if(tfPhone.getText().isEmpty()) {
+			i ++;
+			msg ="Phone ";
+			tfPhone.requestFocus();
+		}
+		if(tfAddress.getText().isEmpty()) {
+			i++;
+			msg ="Address ";
+			tfName.requestFocus();
+		}
+		if(tfEmail.getText().isEmpty()) {
+			i++;
+			msg ="Email ";
+			tfEmail.requestFocus();
+		}
+		if(tfRelate.getText().isEmpty()) {
+			i++;
+			msg ="n ";
+			tfRelate.requestFocus();
+		}
+		if (i>0) {
+			JOptionPane.showMessageDialog(null, msg + " check please");
+		}
+	
+	return i;
+	}
+	
+	
+	
+	private void insertFieldCheckVer1() {
+//		TODO Using ArrayList
+//		ArrayList<JTextField> tf = new ArrayList<JTextField>();
+//		ArrayList<JLabel> jl = new ArrayList<JLabel>();
+//		jl.add();
+//		jl.add(tfPhone);
+//		jl.add(tfAddress);
+//		jl.add(tfEmail);
+//		jl.add(tfRelate);
+//		
+//		for(int i = 0; i < jl.size(); i++) {
+//			if(tb.get(i).getText().isEmpty()){
+//			JOptionPane.showMessageDialog(null, (i+1) + "field is empty");
+//			}
+//		}
+//		
+		
+
+	}
 }
