@@ -24,6 +24,10 @@ public class AddressInsert {
 	private final String url_mysql = "jdbc:mysql://127.0.0.1/useraddress?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
 	private final String id_mysql = "root"; // %root 가 없으면 연결 안된다. 
 	private final String pw_mysql = "qwer1234";
+	private JTextField tfPhone;
+	private JTextField tfAddress;
+	private JTextField tfEmail;
+	private JTextField tfRelate;
 	
 	/**
 	 * Launch the application.
@@ -76,6 +80,42 @@ public class AddressInsert {
 		});
 		btnInsert.setBounds(294, 221, 117, 29);
 		frmAddress.getContentPane().add(btnInsert);
+		
+		JLabel lblNewLabel_1 = new JLabel("Phone");
+		lblNewLabel_1.setBounds(25, 72, 49, 16);
+		frmAddress.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Address");
+		lblNewLabel_2.setBounds(25, 117, 61, 16);
+		frmAddress.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("E-mail");
+		lblNewLabel_3.setBounds(25, 162, 61, 16);
+		frmAddress.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Relationship");
+		lblNewLabel_4.setBounds(25, 210, 84, 16);
+		frmAddress.getContentPane().add(lblNewLabel_4);
+		
+		tfPhone = new JTextField();
+		tfPhone.setColumns(10);
+		tfPhone.setBounds(86, 67, 130, 26);
+		frmAddress.getContentPane().add(tfPhone);
+		
+		tfAddress = new JTextField();
+		tfAddress.setColumns(10);
+		tfAddress.setBounds(86, 112, 130, 26);
+		frmAddress.getContentPane().add(tfAddress);
+		
+		tfEmail = new JTextField();
+		tfEmail.setColumns(10);
+		tfEmail.setBounds(86, 157, 130, 26);
+		frmAddress.getContentPane().add(tfEmail);
+		
+		tfRelate = new JTextField();
+		tfRelate.setColumns(10);
+		tfRelate.setBounds(110, 205, 130, 26);
+		frmAddress.getContentPane().add(tfRelate);
 	}
 	
 	// User info insert 
@@ -87,11 +127,24 @@ public class AddressInsert {
 			Connection conn_mysql = DriverManager.getConnection(url_mysql,id_mysql,pw_mysql);
 			Statement stmt_mysql = conn_mysql.createStatement();
 			
-			String query = "insert into userinfo (name) values (?)";
+			String query = "insert into userinfo (name,telno,address,email,relation) values (?,?,?,?,?) ";
+			
 			
 			ps = conn_mysql.prepareStatement(query);
+						
 			ps.setString(1, tfName.getText().trim());
+			ps.setString(2, tfPhone.getText().trim());
+			ps.setString(3, tfAddress.getText().trim());
+			ps.setString(4, tfEmail.getText().trim());
+			ps.setString(5, tfRelate.getText().trim());
+			
+			
+			
+			
+			
 			ps.executeUpdate(); // 입력끝 
+			
+			
 			
 //			DB CONNECTION CANCEL
 			conn_mysql.close();
@@ -101,19 +154,6 @@ public class AddressInsert {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 }
