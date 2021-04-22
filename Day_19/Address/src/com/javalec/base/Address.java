@@ -550,7 +550,6 @@ public class Address extends JFrame {
 				JOptionPane.showMessageDialog(this, "please Select table ! ");
 				return;
 			}else {
-			System.out.println(i);
 			DeleteAction();
 			TableInit();
 			SearchAction();
