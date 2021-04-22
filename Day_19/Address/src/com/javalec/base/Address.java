@@ -535,7 +535,7 @@ public class Address extends JFrame {
 				ClearColumn();
 			}else {
 				JOptionPane.showMessageDialog(this, "주소록 정보 수정 ! " + "\n" + 
-						"Data를 입력하세요 하세요!",
+						"Data를 입력하세요!",
 						"주소록 정보", 
 						JOptionPane.INFORMATION_MESSAGE);        			
 				
