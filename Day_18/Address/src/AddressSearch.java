@@ -11,17 +11,21 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class AddressSearch {
 	
@@ -56,6 +60,7 @@ public class AddressSearch {
 	private final DefaultTableModel Outer_Table = new DefaultTableModel();
 	private JTextField tfCount;
 	private JLabel lblNewLabel;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -119,20 +124,116 @@ public class AddressSearch {
 		JButton btnChange = new JButton("Change");
 		btnChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				changeAction();
+				
+				int i = Inner_Table.getSelectedRow();
+				if (i == -1) {
+					JOptionPane.showMessageDialog(null, "Please Select Some thing");
+					return; 
+				}else {
+					changeAction(i);
+				}
 			}
 		});
-		btnChange.setBounds(372, 433, 93, 27);
+		btnChange.setBounds(373, 405, 93, 27);
 		frmSearchAddress.getContentPane().add(btnChange);
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				deleteAction();
+				int i = Inner_Table.getSelectedRow();
+				if(i == -1) {
+					JOptionPane.showMessageDialog(null, "Please select table");
+					return;
+				}else {
+				deleteAction(i);
+				}
 			}
 		});
-		btnDelete.setBounds(475, 432, 100, 29);
+		btnDelete.setBounds(467, 404, 100, 29);
 		frmSearchAddress.getContentPane().add(btnDelete);
+		
+		JRadioButton rdbtnInsert = new JRadioButton("Insert");
+		buttonGroup.add(rdbtnInsert);
+		rdbtnInsert.setBounds(22, 6, 72, 23);
+		frmSearchAddress.getContentPane().add(rdbtnInsert);
+		
+		JRadioButton rdbtnChange = new JRadioButton("change");
+		buttonGroup.add(rdbtnChange);
+		rdbtnChange.setBounds(98, 6, 83, 23);
+		frmSearchAddress.getContentPane().add(rdbtnChange);
+		
+		JRadioButton rdbtnDelete = new JRadioButton("delete");
+		buttonGroup.add(rdbtnDelete);
+		rdbtnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				disableAction();
+			}
+		});
+		rdbtnDelete.setBounds(258, 6, 72, 27);
+		frmSearchAddress.getContentPane().add(rdbtnDelete);
+		
+		JRadioButton rdbtnSearch = new JRadioButton("search",true);
+		rdbtnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				disableAction();
+			}
+		});
+		buttonGroup.add(rdbtnSearch);
+		rdbtnSearch.setBounds(178, 6, 83, 27);
+		frmSearchAddress.getContentPane().add(rdbtnSearch);
+		
+		JButton btnOk = new JButton("ok");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JRadioButton rdb[] = {rdbtnInsert,rdbtnChange,rdbtnDelete,rdbtnSearch};
+				
+				if(rdb[0].isSelected()) {
+					System.out.println("insert was selected");
+					int i_chk = insertFieldCheck();
+					if(i_chk == 0) {
+						insertAction();
+					}
+					tableInit();
+					searchAction();
+					
+				}
+				if(rdb[1].isSelected()) {
+					System.out.println("change was selected");
+					int i = Inner_Table.getSelectedRow();
+					if (i == -1) {
+						JOptionPane.showMessageDialog(null, "Please Select Some thing");
+						return; 
+					}else {
+						changeAction(i);
+					}
+				}
+				if(rdb[2].isSelected()) {
+					System.out.println("delete was selected");
+					int i = Inner_Table.getSelectedRow();
+					if(i == -1) {
+						JOptionPane.showMessageDialog(null, "Please select table");
+						return;
+					}else {
+					deleteAction(i);
+					}
+					tfName.setEnabled(false);
+					tfPhone.setEnabled(false);
+					tfAddress.setEnabled(false);
+					tfEmail.setEnabled(false);
+					tfRelate.setEnabled(false);
+					
+				}
+				if(rdb[3].isSelected()) {
+					System.out.println("search was selected");
+					searchAction();
+					
+				}
+			}
+		});
+		btnOk.setBounds(443, 444, 117, 29);
+		frmSearchAddress.getContentPane().add(btnOk);
 	}
 	private JComboBox getCbSelection() {
 		if (cbSelection == null) {
@@ -278,6 +379,7 @@ public class AddressSearch {
 			tfRelate.setColumns(10);
 			tfRelate.setBounds(120, 427, 130, 26);
 		}
+		
 		return tfRelate;
 	}
 	private JTextField getTfCount() {
@@ -432,6 +534,7 @@ public class AddressSearch {
 			break; 
 		}
 		
+		
 		//Unit Test
 //		System.out.print(conditionQueryColumn);
 		
@@ -479,8 +582,8 @@ public class AddressSearch {
 		
 	}
 	
-	private void deleteAction() {
-		int i = Inner_Table.getSelectedRow();
+	private void deleteAction(int i) {
+		
 		String wkseq = (String) Inner_Table.getValueAt(i, 0);
 		
 		String query = "delete from userinfo where ";
@@ -504,8 +607,8 @@ public class AddressSearch {
 			e.printStackTrace();
 		}
 	}
-	private void changeAction() {
-		int i = Inner_Table.getSelectedRow();
+	private void changeAction(int i) {
+		
 		String wkseq = (String) Inner_Table.getValueAt(i, 0);
 		
 		String query = "update userinfo set ";
@@ -516,6 +619,7 @@ public class AddressSearch {
 		String tEmail = tfEmail.getText();
 		String tRelation = tfRelate.getText();
 		
+//		Unit Test
 //		System.out.println(tName + tPhone + tAddress + tEmail + tRelation);
 		
 		String queryName = "name = '" +tName + "', ";
@@ -525,6 +629,7 @@ public class AddressSearch {
 		String queryRelation = "relation = '" + tRelation;
 		String queryWhere = "' where seqno = " + wkseq;
 		
+//		Unit Test
 //		System.out.println(query + queryName + queryPhone + queryAddress + queryEmail + queryRelation + queryWhere);
 		
 		String finalQuery = query + queryName + queryPhone + queryAddress + queryEmail + queryRelation + queryWhere;
@@ -549,9 +654,89 @@ public class AddressSearch {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+
 		
 	}
 	
+	private void insertAction() {		
+//		아래 물음표를 사용하기 위해서 정의한 PreparedStatement
+		PreparedStatement ps = null;
+
+	
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn_mysql = DriverManager.getConnection(url_mysql,id_mysql,pw_mysql);
+		Statement stmt_mysql = conn_mysql.createStatement();
+
+		
+		String query = "insert into userinfo (name,telno,address,email,relation) values (?,?,?,?,?) ";
+		ps = conn_mysql.prepareStatement(query);
+					
+		
+		ps.setString(1, tfName.getText().trim());
+		ps.setString(2, tfPhone.getText().trim());
+		ps.setString(3, tfAddress.getText().trim());
+		ps.setString(4, tfEmail.getText().trim());
+		ps.setString(5, tfRelate.getText().trim());
+	
+		ps.executeUpdate(); // 입력끝 
+		
+		
+		
+//		DB CONNECTION CANCEL
+		conn_mysql.close();
+		
+		JOptionPane.showMessageDialog(null, tfName.getText() + " information is insert");
+		
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	
+	}
+	private int insertFieldCheck() {
+		int i = 0;
+		String msg = "";
+		if(tfName.getText().isEmpty()) {
+			i++;
+			msg ="name ";
+			tfName.requestFocus();
+		}
+		if(tfPhone.getText().isEmpty()) {
+			i ++;
+			msg ="Phone ";
+			tfPhone.requestFocus();
+		}
+		if(tfAddress.getText().isEmpty()) {
+			i++;
+			msg ="Address ";
+			tfName.requestFocus();
+		}
+		if(tfEmail.getText().isEmpty()) {
+			i++;
+			msg ="Email ";
+			tfEmail.requestFocus();
+		}
+		if(tfRelate.getText().isEmpty()) {
+			i++;
+			msg ="n ";
+			tfRelate.requestFocus();
+		}
+		if (i>0) {
+			JOptionPane.showMessageDialog(null, msg + " check please");
+		}
+	
+	return i;
+	}
+	
+	private void disableAction() {
+		tfName.setEnabled(false);
+		tfPhone.setEnabled(false);
+		tfAddress.setEnabled(false);
+		tfEmail.setEnabled(false);
+		tfRelate.setEnabled(false);
+	}
 	
 	
 }
