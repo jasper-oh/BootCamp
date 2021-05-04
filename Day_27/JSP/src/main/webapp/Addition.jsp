@@ -16,12 +16,24 @@
 		int divide = a/b;
 		int divideT = a%b; */
 		
-		while(b < 10){
+		/* while(b < 10){
 			out.println(a +"*" + b + "=" + (a*b) + "<br>");
 			out.println("==============="+"<br>");
 			b++;
+		} */
+		
+		while(true){
+			if(b < 10){
+				out.println(a +"*" + b + "=" + (a*b) + "<br>");
+				out.println("===============?"+"<br>");
+				b++;
+				
+			}else{
+				break;
+			}
 		}
 		
 	%>
+	
 </body>
 </html>
