@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+form.form-example{
+	background-color: #ffffff;
+	text-align: center;
+	margin-bottom: 10px;
+	display:table;
+}
+
+div.form-example {
+	display:table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+.tf {
+	text-align:left;
+	margin-right: 20px;
+	font-size: 20px;
+	color: #afafaf;
+}
+
+
+
