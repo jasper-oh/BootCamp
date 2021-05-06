@@ -27,7 +27,6 @@
 				out.println(a +"*" + b + "=" + (a*b) + "<br>");
 				out.println("===============?"+"<br>");
 				b++;
-				
 			}else{
 				break;
 			}
