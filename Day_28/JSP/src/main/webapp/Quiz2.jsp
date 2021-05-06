@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,7 +20,17 @@
 	
 	%>
 	
-
+	<hr>
+	
+	<%
+	/* 지시자 
+		Import 선언해서 사용하겠다 왜 이름을 지시자 라고 하는지는 모르겠지만...
+	*/
+	
+	int[] iArr = {10 , 20 , 30};
+	out.println(Arrays.toString(iArr));
+	
+	%>
 
 </body>
 </html>
