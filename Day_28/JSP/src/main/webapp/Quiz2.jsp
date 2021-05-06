@@ -8,12 +8,14 @@
 </head>
 <body>
 	
-	<%
-	out.println(powSet(2, 1)+"<br>");
-	out.println(powSet(2, 2)+"<br>");
-	out.println(powSet(2, 3)+"<br>");
-	out.println(powSet(2, 4)+"<br>");
-	out.println(powSet(2, 5)+"<br>");
+
+	
+	<% 
+		for(int i = 1 ; i < 6 ; i++){
+			
+			out.println(powSet(2,i)+"<br>");
+			
+		}
 	
 	%>
 	
@@ -30,5 +32,19 @@
 	return getIntA +" ^ "+ getIntB + " = " + (int)Math.round(Math.pow(a, b));
 }
 
+
+%>
+
+<%!
+	private int power(int a, int b){
+	int result = 1;
+	for(int i = 0 ; i < b ; i ++){
+		result *= a ;
+
+	}
+	
+	return result;
+	
+}
 
 %>
