@@ -16,7 +16,7 @@
  
  <span> 당신의 나이는 <%=age %> 이므로 주류 구매가 불가능합니다.</span>
  
- <a href="http://localhost:8080/JSP/ResponseAge_01.jsp">되돌아가기</a>
+ <a href="http://localhost:8080/JSP/7_ResponseQuiz/ResponseAge_01.jsp">되돌아가기</a>
  
  
 </body>

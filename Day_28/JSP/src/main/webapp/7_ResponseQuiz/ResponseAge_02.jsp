@@ -15,11 +15,11 @@
 		
 		
 		if(intAge > 21){
-			response.sendRedirect("http://localhost:8080/JSP/ResponseAge_03.jsp"+"?age="+intAge);
+			response.sendRedirect("http://localhost:8080/JSP/7_ResponseQuiz/ResponseAge_03.jsp"+"?age="+intAge);
 			
 			
 		}else{
-			response.sendRedirect("http://localhost:8080/JSP/ResponseAge_04.jsp"+"?age="+intAge);
+			response.sendRedirect("http://localhost:8080/JSP/7_ResponseQuiz/ResponseAge_04.jsp"+"?age="+intAge);
 		}
 		
 	%>
