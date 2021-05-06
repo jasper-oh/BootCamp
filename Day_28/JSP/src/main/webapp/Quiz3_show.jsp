@@ -32,7 +32,7 @@
 
 	%>
 	
-	<span><%=Intnum1 + Intnum2 %></span>
+	<span><%=Intnum1 + Intnum2 %></span><br>
 	<span><%=Intnum3 + Intnum4 %></span>
 	
 
