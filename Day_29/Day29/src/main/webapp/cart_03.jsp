@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<h2>결과 출력 창</h2>
+	<h2>상품 선택 저장 결과</h2>
 	
 	<%
 		String result = request.getParameter("result");
@@ -32,7 +32,7 @@
 		<input type="hidden" name="quantity" value=<%=quantity %>>
 		<input type="hidden" name="big" value=<%=howBig %>>
 		<input type="hidden" name="color" value=<%=color %>>
-		<input type="submit" value="결과 보기">
+		<input type="submit" value="저장 결과 불러오">
 	</form>
 	
 	
