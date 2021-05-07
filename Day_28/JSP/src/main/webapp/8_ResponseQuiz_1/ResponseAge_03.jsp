@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+
+<%
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html;charset=UTF-8");
+
+%>
 
 <%
 	String age = request.getParameter("age");

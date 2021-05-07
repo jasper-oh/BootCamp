@@ -15,10 +15,18 @@ sudo kill -9 <PID number>
 request , response
 
 
-```jsp
+```java
 <%
 
 request.setCharacterEncoding("utf-8");
+
+%>
+```
+```java
+<%
+
+header = URLEncoder.encode("미성년자","utf-8");
+isOk = URLEncoder.encode("불가능","utf-8");
 
 %>
 ```
