@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsplec.bbs.command.BCommand;
+import com.jsplec.bbs.command.BContentCommand;
+import com.jsplec.bbs.command.BDeleteCommand;
 import com.jsplec.bbs.command.BListCommand;
+import com.jsplec.bbs.command.BUpdateCommand;
+import com.jsplec.bbs.command.BWriteCommand;
 
 /**
  * Servlet implementation class BFrontController
@@ -75,9 +79,35 @@ public class BFrontController extends HttpServlet {
 		case("/list.do"):
 			command = new BListCommand();
 			command.execute(request, response);
-		
 			viewPage = "list.jsp";
 			break;
+		case("/write_view.do"):
+			viewPage = "write_view.jsp";
+			break;
+			
+		case("/write.do"):
+			command = new BWriteCommand();
+			command.execute(request,response);
+
+			// 위로올라가서 업데이트가 자동으로 되어 보여준다. -> list.do
+			viewPage = "list.do";
+			break;
+		case("/content_view.do"):
+			command = new BContentCommand();
+			command.execute(request, response);
+			viewPage = "content_view.jsp";
+			break;
+		case("/modify.do"):
+			command = new BUpdateCommand();
+			command.execute(request, response);
+			viewPage = "list.do";
+			break;
+		case("/delete.do"):
+			command = new BDeleteCommand();
+			command.execute(request, response);
+			viewPage = "list.do";
+			break;
+			
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

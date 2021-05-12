@@ -8,6 +8,8 @@
 <title>MVC 게시판</title>
 </head>
 <body>
+
+<h2>게시판 출력</h2>
 	<table border="1">
 		<tr>
 			<th>번호</th>
@@ -19,14 +21,14 @@
 			<tr>
 				<td>${dto.bId }</td>
 				<td>${dto.bName }</td>
-				<td>${dto.bContent }</td>
+				<td><a href="content_view.do?bId=${dto.bId}">${dto.bContent }</a></td>
 				<td>${dto.bDate }</td>
 			
-			</tr>
-		
-		
-		
+			</tr>		
 		</c:forEach>
+		<tr>
+			<td colspan="4"><a href="write_view.do">글작성</a></td>
+		</tr>
 	</table>
 
 </body>
