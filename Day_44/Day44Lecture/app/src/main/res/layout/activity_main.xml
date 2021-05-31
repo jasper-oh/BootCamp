@@ -60,6 +60,31 @@
         android:text="Go Frame"
         />
 
+    <Button
+        android:id="@+id/btnFrameTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Go FrameTest"/>
 
+    <Button
+        android:id="@+id/btnCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Go Calculator"/>
+
+    <Button
+        android:id="@+id/btnSnackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Go SnackBar"/>
+    <Button
+        android:id="@+id/btnTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Go TextViewAtt"/>
 
 </LinearLayout>
