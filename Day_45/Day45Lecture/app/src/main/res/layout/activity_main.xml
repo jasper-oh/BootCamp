@@ -40,5 +40,23 @@
         android:layout_height="wrap_content"
         android:text="CheckBox"
         />
+    <Button
+        android:id="@+id/btnRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RadioGroup"
+        />
+    <Button
+        android:id="@+id/btnProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress"
+        />
+    <Button
+        android:id="@+id/btnQuiz10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress"
+        />
 
 </LinearLayout>

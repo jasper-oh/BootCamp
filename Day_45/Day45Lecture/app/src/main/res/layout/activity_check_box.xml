@@ -34,20 +34,20 @@
             android:id="@+id/chk2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="운동"
+            android:text="여행"
             android:layout_weight="1"/>
         <CheckBox
             android:id="@+id/chk3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#5000ff00"
-            android:text="운동"
+            android:text="독서"
             android:layout_weight="1"/>
         <CheckBox
             android:id="@+id/chk4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="운동"
+            android:text="요리"
             android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

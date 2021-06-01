@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Day45Lecture">
-        <activity android:name=".CheckBox"></activity>
+        <activity android:name=".SlidingDrawer"></activity>
+        <activity android:name=".ScrollView" />
+        <activity android:name=".Quiz10" />
+        <activity android:name=".ProgressBar" />
+        <activity android:name=".RadioButton" />
+        <activity android:name=".CheckBox" />
         <activity android:name=".EditLimit" />
         <activity android:name=".EditableTest" />
         <activity android:name=".Text" />
