@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditableTest"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1234567890"/>
+
+    <Button
+        android:id="@+id/btnIns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ins"
+        android:backgroundTint="#9F9B9B"/>
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="del"
+        android:backgroundTint="#9F9B9B"/>
+
+    <Button
+        android:id="@+id/btnApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="app"
+        android:backgroundTint="#9F9B9B"/>
+    <Button
+        android:id="@+id/btnRep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rep"
+        android:backgroundTint="#9F9B9B"/>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        android:backgroundTint="#9F9B9B"/>
+
+
+</LinearLayout>
