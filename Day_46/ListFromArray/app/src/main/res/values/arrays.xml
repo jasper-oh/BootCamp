@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country">
+        <item>Korea</item>
+        <item>USA</item>
+        <item>ENGLAND</item>
+        <item>SPAIN</item>
+        <item>JAPAN</item>
+        <item>CANADA</item>
+        <item>GERMAN</item>
+    </string-array>
+    <string-array name="fruits">
+        <item>Apple</item>
+        <item>strawberry</item>
+        <item>banana</item>
+        <item>pear</item>
+        <item>mandarin</item>
+        <item>peach</item>
+        <item>plum</item>
+    </string-array>
+
+
+</resources>
