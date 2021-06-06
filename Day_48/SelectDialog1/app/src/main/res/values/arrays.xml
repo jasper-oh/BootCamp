@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="foods">
+        <item>짜장면</item>
+        <item>짬뽕</item>
+        <item>우동</item>
+        <item>탕수육</item>
+    </string-array>
+
+    <string-array name="hobby">
+        <item>S</item>
+        <item>B</item>
+        <item>R</item>
+        <item>Q</item>
+    </string-array>
+</resources>
