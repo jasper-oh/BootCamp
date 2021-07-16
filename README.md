@@ -20,12 +20,17 @@
 
 [![Java Badge](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=black)](http://java.com/)
 
+[![Swift Badge](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://www.swift.org/)
+
+[![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+
 #### ⚙️ FrameWork & Tool
 
 [![Spring Badge](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=black)](http://spring.io/)
 [![Eclipse Badge](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)](http://eclipse.org/)
 [![JAVA SWING Badge](https://img.shields.io/badge/Swing-FFFFFF?style=for-the-badge&logo=swing&logoColor=white)](http://java.com/)
 [![ANDORID STUDIO Badge](https://img.shields.io/badge/AndroidStudio-6DB33F?style=for-the-badge&logo=androidstudio&logoColor=white)](http://android.com/)
+[![Xcode Badge](https://img.shields.io/badge/Xcode-1575F9?style=for-the-badge&logo=xcode&logoColor=white)](http://developer.apple.com/)
 
 #### 💿 DB
 
